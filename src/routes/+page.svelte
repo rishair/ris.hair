@@ -2,8 +2,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Rishi Ishairzay</title>
+	<meta name="description" content="I'm a product manager and software developer in Brooklyn, NY." />
 </svelte:head>
 
 <section class="text-default px-6">
