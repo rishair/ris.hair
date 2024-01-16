@@ -4,10 +4,10 @@
 
 html {
     @apply bg-page-background;
-    -webkit-font-smoothing: antialiased; 
+    /* -webkit-font-smoothing: antialiased; 
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; */
 }
 
 body { 
@@ -16,36 +16,35 @@ body {
     font-size: 14pt;   
 }
 
-.namebadge {
-    transform: rotate(-3deg); 
+.name {
+    /* transform: rotate(-3deg);  */
     display: inline-block;
-    border-radius: 10px;
-}
-.namebadge p {
-    color: #fff;
 }
 
-
+.name em {
+    border-radius: 0;
+}
 
 em {
     @apply bg-link-color;
+    @apply bg-forest-green;
     color: #fff;
-    padding: 0 3px;
-    margin: 0 3px;
+    /* padding: 0 3px;
+    margin: 0 3px; */
     font-style: normal;
-    font-weight: 400;
 }
 
 h1 em {
-    padding: 8px 14px;
+    /* padding: 8px 14px; */
 }
 
 h1 {
     font-size: 2.5em;
     font-family: 'Work Sans', sans-serif;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.03em;
     line-height: 1.2em;
     font-weight: bold;
+    width: fit-content !important;
 }
 
 h2 {
@@ -71,7 +70,7 @@ h1, h2 {
     margin-bottom: 42px;
 }
 p {
-    margin-bottom: 12px;
+    margin-bottom: 18px;
 }
 
 

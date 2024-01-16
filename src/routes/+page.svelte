@@ -6,20 +6,12 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class="text-default">
-	<div class="flex items-center justify-center mb-14">
-		<div class="namebadge shadow inner-outer-shadow hover bg-primary-color text-center">
-			<div class="pt-3">
-				<p class="p-0 mb-2 font-bold text-base">HELLO MY NAME IS</p>
-			</div>
-			<h1 class="font-source-serif font-normal bg-white text-gray-500 p-5 mb-8">Rishi Ishairzay</h1>
-		</div>
-	</div>
-
+<section class="text-default px-6">
+	<h1 class="name mb-16 inline-block">Hey there, I'm <em class="shadow px-2 py-1">Rishi Ishairzay</em></h1>
 	<h2>I'm a <strong> product manager</strong> and <strong>software developer</strong> in Brooklyn, NY. </h2>
 
 	<p>
-		I'm a product manager and software developer building an AI x tool for thinking at <a href="https://goodword.ing">Good Wording</a>.
+		Now a days I'm building an AI x tool for thinking product at <a href="https://goodword.ing">Good Wording</a>.
 	<p>
 
 	<p>
