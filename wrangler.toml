@@ -1,0 +1,19 @@
+name = "rishair"
+account_id = "75e26858f8d36b8fad28ad311dd0f360"
+
+main = "./.cloudflare/worker.js"
+site.bucket = "./.cloudflare/public"
+
+build.command = "npm run build"
+compatibility_date = "2021-11-12"
+
+
+[env.staging]
+name = "rishair-staging"
+account_id = "75e26858f8d36b8fad28ad311dd0f360"
+workers_dev = true
+
+[env.prod]
+name = "rishair-prod"
+account_id = "75e26858f8d36b8fad28ad311dd0f360"
+workers_dev = false
