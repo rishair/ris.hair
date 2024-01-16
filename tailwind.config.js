@@ -13,7 +13,8 @@ export default {
 
         'aqua': '#008b70',
         'taupe': '#fffaef',
-        'forest-green': '#006b56'
+        'forest-green': '#006b56',
+        'orange': '#E37769'
       },
       fontFamily: {
         'work-sans': ['"Work Sans"', 'sans-serif'],

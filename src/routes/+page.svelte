@@ -23,11 +23,11 @@
 	</p>
 		
 	<p>
-		I'm a big fan of building beautiful products that help people understand themselves, connect with others, explore their curiosities, and have fun along the way. In other words, the products I wish existed.
+		I build beautiful products that help people understand themselves, connect with others, explore their curiosities, and have fun along the way. In other words, the products I wish existed.
 	</p>
 		
 	<p>
-		Please reach out if you want to connect or collaborate. My email is rishi.ishairzay@gmail.com.
+		Say hi at <a href="mailto:hello@ris.hair">hello@ris.hair</a>.
 	</p>
 </section>
 

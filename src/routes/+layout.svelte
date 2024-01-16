@@ -18,6 +18,6 @@
 	<link href="https://api.fontshare.com/v2/css?f[]=supreme@400,401,700&display=swap" rel="stylesheet"></svelte:head>
 
 
-<main class="container mx-auto max-w-3xl pt-20 bg-page-background">
+<main class="container mx-auto max-w-3xl py-20 bg-page-background">
 	<slot />	
 </main>

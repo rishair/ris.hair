@@ -73,6 +73,13 @@ p {
     margin-bottom: 18px;
 }
 
+button {
+    @apply bg-orange;
+    padding: 8px 12px;
+    font-weight: normal;
+    color: #fff;
+    border-radius: 4px;
+}
 
 .shadow.hover {
 	transition: box-shadow 0.1s ease-in-out;
