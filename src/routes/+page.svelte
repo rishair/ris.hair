@@ -11,7 +11,7 @@
 	<h2>I'm a <strong> product manager</strong> and <strong>software developer</strong> in Brooklyn, NY. </h2>
 
 	<p>
-		Nowadays I'm building an AI tool for thought at <a href="https://goodword.ing">Good Wording</a>.
+		Nowadays I'm building an AI-powered tool for thought at <a href="https://goodword.ing">Good Wording</a>.
 	<p>
 
 	<p>
