@@ -11,19 +11,19 @@
 	<h2>I'm a <strong> product manager</strong> and <strong>software developer</strong> in Brooklyn, NY. </h2>
 
 	<p>
-		Now a days I'm building an AI x tool for thinking product at <a href="https://goodword.ing">Good Wording</a>.
+		Nowadays I'm building an AI tool for thought at <a href="https://goodword.ing">Good Wording</a>.
 	<p>
 
 	<p>
-		In my <strong>personal life</strong> I'm into psychology, evolution, nature, cycling, space, improv, yoga, and probably other things by now. I have roots in Virginia, San Francisco, and now Brooklyn. My friends and family mean everything to me.
+		In my <strong>personal life</strong>, I'm into psychology, evolution, nature, cycling, space, improv, yoga, and probably other things by now. I have roots in Virginia, San Francisco, and now Brooklyn. My friends and family mean everything to me.
 	</p>
 		
 	<p>
-		In my <strong>career</strong>, I've been a founder (3x), product manager, distributed systems engineer, front-end engineer (web & ios), and many things in between. My more notable accomplishments have been a 9-year stint at Twitter, bootstrapping a profitable startup with ~200K users, and ignoring a cease-and-desist from Activision.
+		In my <strong>career</strong>, I've been a founder (3x), product manager, distributed systems engineer, front-end engineer (web & iOS), and many things in between. My more notable accomplishments are a 9-year stint at Twitter, bootstrapping a profitable startup with ~200K users, and ignoring a cease-and-desist from Activision.
 	</p>
 		
 	<p>
-		I build beautiful products that help people understand themselves, connect with others, explore their curiosities, and have fun along the way. In other words, the products I wish existed.
+		I build beautiful products that help people understand themselves, connect with others, explore their curiosity, and have fun along the way. In other words, the products I wish existed.
 	</p>
 		
 	<p>
@@ -32,7 +32,6 @@
 </section>
 
 <style>
-
 	h1 {
 		width: 100%;
 	}
