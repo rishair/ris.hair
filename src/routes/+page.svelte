@@ -15,7 +15,7 @@
 	<p>
 
 	<p>
-		In my <strong>personal life</strong>, I'm into psychology, evolution, nature, cycling, space, improv, yoga, and probably other things by now. I have roots in Virginia, San Francisco, and now Brooklyn. My friends and family mean everything to me.
+		In my <strong>personal life</strong>, I'm drawn to psychology, evolution, nature, cycling, space, improv, yoga, and likely other things by now. I have roots in Virginia, San Francisco, and now Brooklyn. My friends and family mean everything to me.
 	</p>
 		
 	<p>
