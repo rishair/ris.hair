@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Lora Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/lora:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* roboto-mono-latin-wght-normal */
+@font-face {
+    font-family: 'Roboto Mono Variable';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 700;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/roboto-mono:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+
 html {
     @apply bg-page-background;
     /* -webkit-font-smoothing: antialiased; 
@@ -10,13 +29,25 @@ html {
     scroll-behavior: smooth; */
 }
 
+/* lexend-latin-wght-normal */
+@font-face {
+    font-family: 'Lexend Variable';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/lexend:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+
 body { 
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Lexend Variable', sans-serif;
     letter-spacing: -0.02em;
-    font-size: 14pt;   
+    font-size: 13pt;   
+    font-weight: 300;
 }
 
 .name {
+    font-family: 'Lora Variable', serif;
     /* transform: rotate(-3deg);  */
     display: inline-block;
 }
@@ -139,4 +170,19 @@ button {
 		inset 0px 4px 4px 0px rgba(0, 0, 0, 0.05), 
 		inset 0px 8px 8px 0px rgba(0, 0, 0, 0.05), 
 		inset 0px 16px 16px 0px rgba(0, 0, 0, 0.05);
+}
+
+.important-list {
+    list-style: none;
+    padding-left: 2rem;
+}
+
+.important-list li {
+    position: relative;
+}
+
+.important-list li::marker {
+    content: "→ ";
+    @apply text-orange;
+    margin-right: 2em;
 }

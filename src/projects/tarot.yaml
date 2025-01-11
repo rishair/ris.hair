@@ -1,0 +1,16 @@
+title: Tarot
+description: Platform to create secure and durable cryptocurrency contracts from english.
+link: https://goodword.ing
+image: /images/projects/goodwording.png
+startDate: January 2024
+slug: tarot
+atAGlance:
+  - Smart contract development platform
+  - Natural language processing
+  - Blockchain integration
+fullDescription: |
+  A longer, more detailed description of the project goes here.
+  Can include multiple paragraphs and formatting.
+gallery:
+  - src: /images/projects/tarot/1.png
+    caption: Caption for image 1 

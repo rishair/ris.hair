@@ -1,0 +1,25 @@
+title: Your Year in Poetry
+description: Analyzed all my journal entries in 2024, clustered common themes, and created AI poetry and art.
+link: https://goodword.ing
+image: /images/projects/goodwording.png
+startDate: November 2024
+endDate: November 2024
+slug: year-in-poetry
+atAGlance:
+  - Natural language processing
+  - AI-generated poetry
+  - Data visualization
+  - Personal analytics
+fullDescription: |
+  Your Year in Poetry is an experimental project that transforms personal journal entries into meaningful poetry and art using AI.
+  
+  The project analyzes journal entries to identify emotional patterns and recurring themes, then uses these insights to generate 
+  personalized poems and accompanying artwork that capture the essence of your year.
+  
+  Built using advanced language models and image generation AI, this project demonstrates the creative potential of AI in 
+  personal reflection and self-expression.
+gallery:
+  - src: /images/projects/year-in-poetry/1.png
+    caption: Generated poetry example
+  - src: /images/projects/year-in-poetry/2.png
+    caption: AI-generated artwork 

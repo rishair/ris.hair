@@ -1,0 +1,23 @@
+title: AI Santa
+description: AI-powered Santa Twitter bot & cryptocurrency that declared people naughty or nice.
+link: https://x.com/robosantahoho
+image: /images/projects/ai-santa/santa.jpg
+startDate: December 2024
+endDate: December 2024
+slug: ai-santa
+atAGlance:
+  - Launched an AI-powered Santa on Twitter on December 19th, 2024 (@robosantahoho)
+  - Coupled the launch with a memecoin ($COAL).
+  - Market cap went from $10K -> $1M back to $10K market cap in 3 days
+  - I managed to lose money in the process.
+fullDescription: |
+  This project was a doozey. It started as an experiment in building an AI personality that didn't feel so sterile. 
+gallery:
+  - src: /images/projects/ai-santa/example_tweet.png
+    caption: Santa's wit on display
+  - src: /images/projects/ai-santa/market.png
+    caption: Market cap goes from $10K -> $1M back to $100K
+  - src: /images/projects/ai-santa/profile.png
+    caption: Badass Santa's profile
+  - src: /images/projects/ai-santa/website.png
+    caption: Christmas countdown at https://robosanta.xyz
