@@ -1,4 +1,95 @@
-<script>
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import TagPill from '$lib/components/TagPill.svelte';
+	
+	export let data;
+	
+	// Register ScrollTrigger plugin
+	gsap.registerPlugin(ScrollTrigger);
+	
+	// Function to format date range for projects
+	function formatDateRange(startDate: string, endDate: string | undefined) {
+		if (!endDate) {
+			return `${startDate} - Current`;
+		}
+		if (startDate === endDate) {
+			return startDate;
+		}
+		return `${startDate} - ${endDate}`;
+	}
+	
+	// Initialize animations after component is mounted
+	onMount(() => {
+		// Animate section titles
+		gsap.utils.toArray('.section-title').forEach((title) => {
+			gsap.fromTo(
+				title as Element,
+				{ 
+					opacity: 0, 
+					y: 50 
+				},
+				{
+					opacity: 1,
+					y: 0,
+					duration: 0.8,
+					ease: 'power2.out',
+					scrollTrigger: {
+						trigger: title as Element,
+						start: 'top 80%',
+						toggleActions: 'play none none none'
+					}
+				}
+			);
+		});
+		
+		// Animate section content
+		gsap.utils.toArray('.section-content').forEach((content) => {
+			gsap.fromTo(
+				content as Element,
+				{ 
+					opacity: 0, 
+					y: 30 
+				},
+				{
+					opacity: 1,
+					y: 0,
+					duration: 0.8,
+					delay: 0.2,
+					ease: 'power2.out',
+					scrollTrigger: {
+						trigger: content as Element,
+						start: 'top 80%',
+						toggleActions: 'play none none none'
+					}
+				}
+			);
+		});
+		
+		// Animate projects with staggered effect
+		gsap.utils.toArray('.project-card').forEach((card, index) => {
+			gsap.fromTo(
+				card as Element,
+				{ 
+					opacity: 0, 
+					y: 30 
+				},
+				{
+					opacity: 1,
+					y: 0,
+					duration: 0.6,
+					delay: 0.1 * index, // Staggered delay
+					ease: 'power2.out',
+					scrollTrigger: {
+						trigger: card as Element,
+						start: 'top 85%',
+						toggleActions: 'play none none none'
+					}
+				}
+			);
+		});
+	});
 </script>
 
 <svelte:head>
@@ -9,7 +100,8 @@
 	/>
 </svelte:head>
 
-<section class="text-default px-6">
+<!-- Introduction Section -->
+<section id="intro" class="text-default px-6 mb-32">
 	<h1 class="name mb-16 inline-block">
 		Hey there, I'm <em class="shadow px-2 py-1">Rishi Ishairzay</em>
 	</h1>
@@ -20,7 +112,7 @@
 	<p>
 		Nowadays I'm building a hyper-local event discovery platform at <a href="https://juice.com"
 			>Juice</a
-		>. See my previous exploits <a href="/projects">below</a>.
+		>. See my previous exploits <a href="#side-quests">below</a>.
 	</p>
 	<p>
 		In my <strong>personal life</strong>, I'm drawn to psychology, evolution, nature, cycling,
@@ -86,9 +178,106 @@
 	</div>
 </section>
 
+<!-- Side Quests Section -->
+<section id="side-quests" class="text-default px-6 mb-32 pt-16">
+	<h2 class="section-title mb-16 inline-block">
+		<em class="shadow px-2 py-1">Side Quests</em>
+	</h2>
+	
+	<div class="section-content">
+		<p class="mb-8">
+			Here are some of the projects I've worked on over the years. Each represents a different chapter in my journey as a builder and creator.
+		</p>
+		
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+			{#each data.projects as project, i}
+				<a href="/projects/{project.slug}" class="group block project-card">
+					<div class="shadow hover rounded-lg overflow-hidden transition-all duration-200 bg-white/40">
+						<img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
+						<div class="p-6">
+							<h3 class="text-xl font-bold mb-2">{project.title}</h3>
+							<p class="text-gray-600 mb-2">{project.description}</p>
+							
+							<!-- Display tags -->
+							<div class="mb-2">
+								{#if project.tags && project.tags.length > 0}
+									{#each project.tags as tag}
+										<TagPill {tag} />
+									{/each}
+								{/if}
+							</div>
+							
+							<p class="text-sm text-gray-500">
+								{formatDateRange(project.startDate, project.endDate)}
+							</p>
+						</div>
+					</div>
+				</a>
+			{/each}
+		</div>
+	</div>
+</section>
+
+<!-- Things that have Shaped me Section -->
+<section id="shaped-me" class="text-default px-6 mb-32 pt-16">
+	<h2 class="section-title mb-16 inline-block">
+		<em class="shadow px-2 py-1">Things that have Shaped me</em>
+	</h2>
+	
+	<div class="section-content">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+			<div>
+				<h3 class="text-xl font-bold mb-4">Books & Ideas</h3>
+				<ul class="important-list space-y-3">
+					<li>The Righteous Mind by Jonathan Haidt</li>
+					<li>Thinking in Systems by Donella Meadows</li>
+					<li>Gödel, Escher, Bach by Douglas Hofstadter</li>
+					<li>The Elephant in the Brain by Kevin Simler & Robin Hanson</li>
+					<li>Impro by Keith Johnstone</li>
+				</ul>
+			</div>
+			
+			<div>
+				<h3 class="text-xl font-bold mb-4">Experiences</h3>
+				<ul class="important-list space-y-3">
+					<li>Building products from scratch</li>
+					<li>Living in different cities</li>
+					<li>Improv comedy classes</li>
+					<li>Long bike rides through nature</li>
+					<li>Deep conversations with friends</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="mt-12">
+			<h3 class="text-xl font-bold mb-4">Philosophies</h3>
+			<p>
+				I believe in building things that matter, prioritizing relationships over achievements, 
+				and maintaining a healthy sense of curiosity about the world. I try to approach life with 
+				a balance of ambition and contentment, always seeking to learn and grow while appreciating 
+				what I already have.
+			</p>
+		</div>
+	</div>
+</section>
+
 <style>
 	h1 {
 		width: 100%;
+	}
+
+	/* Make section titles use the same font as the name */
+	.section-title {
+		font-family: 'Work Sans', sans-serif;
+		letter-spacing: -0.03em;
+		font-weight: bold;
+		font-size: 2em;
+	}
+
+	/* Add subtle dividers between sections */
+	section:not(:first-child) {
+		border-top: 1px solid rgba(0, 107, 86, 0.1); /* Light forest-green */
+		position: relative;
 	}
 
 	.welcome {
@@ -105,5 +294,10 @@
 		height: 100%;
 		top: 0;
 		display: block;
+	}
+	
+	/* Add smooth scrolling behavior */
+	:global(html) {
+		scroll-behavior: smooth;
 	}
 </style>

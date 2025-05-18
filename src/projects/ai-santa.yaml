@@ -1,17 +1,47 @@
-title: AI Santa
-description: AI-powered Santa Twitter bot & cryptocurrency that declared people naughty or nice.
+title: Robot Santa Twitter Bot
+description: Snarky Santa that roasted people on Twitter for being naughty/nice, powered by an AI writing room. Attached to a memecoin 📈
+tags: 
+  - ai
+  - crypto
 link: https://x.com/robosantahoho
 image: /images/projects/ai-santa/santa.jpg
 startDate: December 2024
 endDate: December 2024
 slug: ai-santa
 atAGlance:
-  - Launched an AI-powered Santa on Twitter on December 19th, 2024 (@robosantahoho)
-  - Coupled the launch with a memecoin ($COAL).
-  - Market cap went from $10K -> $1M back to $10K market cap in 3 days
-  - I managed to lose money in the process.
+  - Launched an AI Santa that roasted people for being naughty/nice
+  - Attached a memecoin ($COAL), went micro-viral
+  - Market cap went from $10K > $1M > $10K in 2 weeks
 fullDescription: |
-  This project was a doozey. It started as an experiment in building an AI personality that didn't feel so sterile. 
+  The month was December 2024. Fartcoin hit it's all-time high and CBS was talking about the "memecoin rage". The crypto community was foaming at the mouth over low-quality AI products.
+
+  With Christmas coming up, I built an AI Santa (@robosantahoho) that read people's tweets and profiles, assigned them a naughty/nice score then roasted them accordingly.
+
+  Here's an exceprt from the prompt, to get an idea of the tone:
+  
+  > You are Santa. Your personality has the crassness of Rick from Rick and Morty, and the succinct wit and low-key savageness of Mark Twain
+
+  Santa was **funny**.
+
+  ![Santa's Twitter Profile](/images/projects/ai-santa/profile.png "The AI Santa Twitter profile that roasted people for being naughty")
+
+  To begin with
+
+  This project was a doozey. It started as an experiment in building an AI personality that didn't feel so sterile. The combination of AI agents working together created a unique voice that was both entertaining and engaging.
+
+  ```javascript
+  // Example of how the AI agents were orchestrated
+  function createRoast(target, naughtyLevel) {
+    const basePrompt = `Create a roast for ${target} who has been ${naughtyLevel} naughty`;
+    const firstDraft = firstAgent.generate(basePrompt);
+    const refinedDraft = editorAgent.refine(firstDraft);
+    return wittyAgent.addHumor(refinedDraft);
+  }
+  ```
+
+  > The project went viral faster than expected. Within 48 hours, we had thousands of followers and the $COAL token skyrocketed from a $10K market cap to over $1M.
+
+  ![Market Cap Growth](/images/projects/ai-santa/market.png "The meteoric rise and fall of the $COAL token")
 gallery:
   - src: /images/projects/ai-santa/example_tweet.png
     caption: Santa's wit on display

@@ -33,7 +33,7 @@ body {
     font-family: 'Work Sans', sans-serif;
     letter-spacing: -0.02em;
     font-size: 14pt;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .name {
@@ -46,13 +46,22 @@ body {
     border-radius: 0;
 }
 
-em {
+/* Styling for em elements in headings and special sections */
+h1 em, h2 em, h3 em, .section-title em, .name em {
     @apply bg-link-color;
     @apply bg-forest-green;
     color: #fff;
-    /* padding: 0 3px;
-    margin: 0 3px; */
     font-style: normal;
+}
+
+/* Default styling for em elements */
+em {
+    font-style: italic;
+}
+
+/* Default styling for strong elements */
+strong {
+    font-weight: 700;
 }
 
 h1 em {
@@ -181,4 +190,85 @@ button {
     content: "→ ";
     @apply text-orange;
     margin-right: 2em;
+}
+
+/* Markdown styling */
+.prose pre {
+    font-family: 'Roboto Mono Variable', monospace;
+    background-color: #f3f4f6;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    display: block;
+    width: calc(100% - 1rem);
+    box-sizing: border-box;
+    margin: 2rem 0;
+    margin-left: 1rem;
+}
+
+.prose code {
+    font-family: 'Roboto Mono Variable', monospace;
+    font-size: 0.875rem;
+    color: #1f2937;
+}
+
+.prose blockquote {
+    border-left: 4px solid #E37769;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin: 2rem 0;
+    margin-left: 1rem;
+    background-color: rgba(227, 119, 105, 0.05);
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    display: block;
+    width: calc(100% - 1rem);
+    box-sizing: border-box;
+}
+
+.prose blockquote p {
+    margin-bottom: 0;
+    color: #4b5563;
+    font-style: italic;
+}
+
+.prose figure {
+    margin: 2rem 0;
+}
+
+.prose figure img {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.prose figure img:hover {
+    transform: scale(1.05);
+}
+
+.prose figure figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Specific styling for em and strong elements in Markdown content */
+.prose em {
+    font-style: italic;
+    background: none;
+    color: inherit;
+}
+
+.prose strong {
+    font-weight: 700;
+    color: #1f2937;
 }
