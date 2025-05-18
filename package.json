@@ -10,7 +10,8 @@
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
     "pages:dev": "wrangler pages dev --compatibility-date=2023-12-18 --proxy 5173 -- npm run dev",
-    "pages:deploy": "npm run build && wrangler pages deploy .svelte-kit/cloudflare"
+    "deploy:staging": "npm run build && wrangler deploy --env staging",
+    "deploy:prod": "npm run build && wrangler deploy --env prod"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
@@ -38,6 +39,7 @@
   "type": "module",
   "dependencies": {
     "@sveltejs/adapter-cloudflare-workers": "^2.0.2",
+    "gsap": "^3.13.0",
     "js-yaml": "^4.1.0"
   }
 }

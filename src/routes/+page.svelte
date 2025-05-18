@@ -14,15 +14,14 @@
 		Hey there, I'm <em class="shadow px-2 py-1">Rishi Ishairzay</em>
 	</h1>
 	<h2>
-		I'm a <strong> product manager</strong> and <strong>software developer</strong> in Brooklyn, NY.
+		I'm an independent <strong>AI product engineer</strong> in Brooklyn, NY.
 	</h2>
 
 	<p>
-		Nowadays I'm building an AI-powered tool for thought at <a href="https://goodword.ing"
-			>Good Wording</a
-		>.
+		Nowadays I'm building a hyper-local event discovery platform at <a href="https://juice.com"
+			>Juice</a
+		>. See my previous exploits <a href="/projects">below</a>.
 	</p>
-	<p></p>
 	<p>
 		In my <strong>personal life</strong>, I'm drawn to psychology, evolution, nature, cycling,
 		space, improv, yoga, and likely other things by now. I have roots in Virginia, San Francisco,

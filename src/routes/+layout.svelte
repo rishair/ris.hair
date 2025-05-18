@@ -13,7 +13,7 @@
 	<meta property="og:title" content="Rishi Ishairzay" />
 	<meta
 		property="og:description"
-		content="I'm a product manager and software developer in Brooklyn, NY."
+		content="I'm an AI product engineer in Brooklyn, NY."
 	/>
 
 	<title>Rishi Ishairzay</title>
