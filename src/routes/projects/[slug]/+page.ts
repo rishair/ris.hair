@@ -17,6 +17,6 @@ export async function load({ params }) {
 		project,
 		prevProject: prev ? { slug: prev.slug, title: prev.title } : null,
 		nextProject: next ? { slug: next.slug, title: next.title } : null,
-		title: 'Rishi | ' + project.title
+		title: project.title + " / Rishi"
 	};
 }
