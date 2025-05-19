@@ -2,11 +2,15 @@
 	import { processMarkdown } from '$lib/utils';
 	import { onMount } from 'svelte';
 	import TagPill from '$lib/components/TagPill.svelte';
+	import { fade, fly } from 'svelte/transition';
 
 	export let data: { project: any; prevProject: any; nextProject: any };
-	const project = data.project;
-	const prevProject = data.prevProject;
-	const nextProject = data.nextProject;
+
+	// Make these reactive to data changes
+	$: project = data.project;
+	$: prevProject = data.prevProject;
+	$: nextProject = data.nextProject;
+	$: processedDescription = processMarkdown(project.fullDescription);
 
 	// Function to format date range for projects
 	function formatDateRange(startDate: string, endDate: string | undefined) {
@@ -18,9 +22,6 @@
 		}
 		return `${startDate} - ${endDate}`;
 	}
-
-	// Process the markdown content
-	const processedDescription = processMarkdown(project.fullDescription);
 
 	// Define image interface
 	interface GalleryImage {
@@ -131,8 +132,6 @@
 			})
 		];
 
-		console.log(allImages);
-
 		// Add click handlers to all markdown images
 		document.querySelectorAll('.markdown-image, .markdown-video').forEach((img) => {
 			img.addEventListener('click', () => {
@@ -143,6 +142,43 @@
 			});
 		});
 	});
+
+	// Update gallery when project changes
+	$: if (typeof window !== 'undefined' && project) {
+		// Only run this in the browser
+		setTimeout(() => {
+			allImages = [
+				...(project.gallery || []),
+				...Array.from(document.querySelectorAll('.markdown-image, .markdown-video')).map((el) => {
+					const isVideo = el.classList.contains('markdown-video');
+					const caption = el.getAttribute('data-caption');
+					if (isVideo) {
+						return {
+							src: el.querySelector('source')?.getAttribute('src'),
+							caption: caption,
+							type: 'video'
+						};
+					} else {
+						return {
+							src: el.getAttribute('src'),
+							type: 'image',
+							caption: el.getAttribute('data-caption')
+						};
+					}
+				})
+			];
+
+			// Add click handlers to all markdown images
+			document.querySelectorAll('.markdown-image, .markdown-video').forEach((img) => {
+				img.addEventListener('click', () => {
+					openLightboxForMarkdownImage(
+						img.getAttribute('src') || img.querySelector('source')?.getAttribute('src') || '',
+						img.getAttribute('data-caption') || ''
+					);
+				});
+			});
+		}, 0);
+	}
 </script>
 
 <svelte:head>
@@ -150,7 +186,7 @@
 	<meta name="description" content={project.description} />
 </svelte:head>
 
-<section class="text-default px-6">
+<section class="text-default px-6" in:fly={{ y: 20, duration: 400 }} out:fade={{ duration: 200 }}>
 	<h1 class="name mb-2">
 		<em class="shadow px-2 py-1">{project.title}</em>
 	</h1>

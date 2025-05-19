@@ -189,7 +189,7 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			{#each data.projects as project, i}
-				<a href="/projects/{project.slug}" class="group block project-card">
+				<a href={'/projects/' + project.slug} class="group block project-card">
 					<div
 						class="shadow hover rounded-lg overflow-hidden transition-all duration-200 bg-white/40 border-8 border-white/40"
 					>

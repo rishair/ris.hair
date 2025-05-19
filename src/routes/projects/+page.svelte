@@ -24,7 +24,7 @@
 
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 		{#each data.projects as project}
-			<a href="/projects/{project.slug}" class="group block">
+			<a href={'/projects/' + project.slug} class="group block">
 				<div class="shadow hover rounded-lg overflow-hidden transition-all duration-200">
 					<img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
 					<div class="p-6">
