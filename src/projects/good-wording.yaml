@@ -1,23 +1,15 @@
 title: Good Wording
 description: An AI-powered journal that helps you get a birds-eye view of your thoughts.
 link: https://goodword.ing
-image: /images/projects/good-wording/cover.png
+image: /images/projects/gw/stars.png
 startDate: September 2023
 endDate: July 2024
 slug: good-wording
+tags:
+  - ai
+  - defunct
 atAGlance:
-  - AI-powered journaling platform
-  - Natural language understanding
-  - Personal insights and analytics
-  - Privacy-focused design
+  - More soon
 fullDescription: |
-  Good Wording is a revolutionary journaling platform that uses AI to help you understand your thoughts and patterns over time. 
-  
-  The platform analyzes your journal entries to identify themes, patterns, and insights while maintaining strict privacy and data security standards.
-  
-  Built with modern web technologies and advanced AI models, Good Wording aims to make journaling more insightful and meaningful.
+  More soon  
 gallery:
-  - src: /images/projects/good-wording/1.png
-    caption: Journal interface
-  - src: /images/projects/good-wording/2.png
-    caption: AI insights dashboard 

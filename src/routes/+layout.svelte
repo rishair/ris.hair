@@ -1,20 +1,14 @@
 <script>
 	import '../styles/app.css';
 
-	const navItems = [
-		{ href: '/', label: 'Home' }
-		// { href: '/projects', label: 'Projects' }
-	];
+	const navItems = [];
 </script>
 
 <svelte:head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta property="og:title" content="Rishi Ishairzay" />
-	<meta
-		property="og:description"
-		content="I'm an AI product engineer in Brooklyn, NY."
-	/>
+	<meta property="og:description" content="I'm an AI product engineer in Brooklyn, NY." />
 
 	<title>Rishi Ishairzay</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />

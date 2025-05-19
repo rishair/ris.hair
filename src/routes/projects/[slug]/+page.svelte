@@ -2,10 +2,10 @@
 	import { processMarkdown } from '$lib/utils';
 	import { onMount } from 'svelte';
 	import TagPill from '$lib/components/TagPill.svelte';
-	
+
 	export let data: { project: any };
 	const project = data.project;
-	
+
 	// Function to format date range for projects
 	function formatDateRange(startDate: string, endDate: string | undefined) {
 		if (!endDate) {
@@ -31,7 +31,7 @@
 	let currentImageIndex = 0;
 	let currentImageSrc = '';
 	let currentImageCaption = '';
-	
+
 	// Combined gallery of project gallery images and inline markdown images
 	let allImages: GalleryImage[] = [];
 
@@ -46,7 +46,7 @@
 	// Function to open the lightbox for inline markdown images
 	function openLightboxForMarkdownImage(src: string, caption: string): void {
 		// Find the index of this image in the allImages array
-		const index = allImages.findIndex(img => img.src === src);
+		const index = allImages.findIndex((img) => img.src === src);
 		if (index !== -1) {
 			openLightbox(index);
 		} else {
@@ -86,14 +86,14 @@
 		allImages = [
 			...(project.gallery || []),
 			// Add any markdown images that aren't already in the gallery
-			...Array.from(document.querySelectorAll('.markdown-image')).map(img => ({
+			...Array.from(document.querySelectorAll('.markdown-image')).map((img) => ({
 				src: img.getAttribute('src') || '',
 				caption: img.getAttribute('data-caption') || ''
 			}))
 		];
 
 		// Add click handlers to all markdown images
-		document.querySelectorAll('.markdown-image').forEach(img => {
+		document.querySelectorAll('.markdown-image').forEach((img) => {
 			img.addEventListener('click', () => {
 				openLightboxForMarkdownImage(
 					img.getAttribute('src') || '',
@@ -115,7 +115,7 @@
 	</h1>
 
 	<!-- Display date -->
-	<p class="text-gray-500 mb-4">
+	<p class="my-2">
 		{formatDateRange(project.startDate, project.endDate)}
 	</p>
 
@@ -123,12 +123,12 @@
 	<div class="mb-6">
 		{#if project.tags && project.tags.length > 0}
 			{#each project.tags as tag}
-				<TagPill {tag} />
+				<TagPill {tag} variant="green" />
 			{/each}
 		{/if}
 	</div>
 
-	<div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12 bg-forest-green bg-opacity-5 p-6 rounded-lg">
+	<div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mt-12">
 		<div class="lg:col-span-3">
 			<h2 class="text-xl font-bold mb-4">At a Glance</h2>
 			<ul class="important-list mb-6">
@@ -140,16 +140,18 @@
 
 		<div class="lg:col-span-1">
 			<img src={project.image} alt={project.title} class="w-full rounded-lg shadow mb-4" />
-			<div class="flex justify-center">
-				<a
-					href={project.link}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="bg-link-color text-white px-4 py-2 rounded hover:opacity-90"
-				>
-					Visit 
-				</a>
-			</div>
+			{#if project.link}
+				<div class="flex justify-center">
+					<a
+						href={project.link}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="bg-link-color text-white px-4 py-2 rounded hover:opacity-90"
+					>
+						Visit
+					</a>
+				</div>
+			{/if}
 		</div>
 	</div>
 
@@ -210,11 +212,7 @@
 
 				<!-- Image and caption container -->
 				<div class="w-full">
-					<img
-						src={currentImageSrc}
-						alt={currentImageCaption}
-						class="w-full rounded-lg"
-					/>
+					<img src={currentImageSrc} alt={currentImageCaption} class="w-full rounded-lg" />
 
 					{#if currentImageCaption}
 						<p class="text-center text-white mt-4">

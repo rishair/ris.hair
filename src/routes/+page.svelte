@@ -3,12 +3,12 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import TagPill from '$lib/components/TagPill.svelte';
-	
+
 	export let data;
-	
+
 	// Register ScrollTrigger plugin
 	gsap.registerPlugin(ScrollTrigger);
-	
+
 	// Function to format date range for projects
 	function formatDateRange(startDate: string, endDate: string | undefined) {
 		if (!endDate) {
@@ -19,16 +19,16 @@
 		}
 		return `${startDate} - ${endDate}`;
 	}
-	
+
 	// Initialize animations after component is mounted
 	onMount(() => {
 		// Animate section titles
 		gsap.utils.toArray('.section-title').forEach((title) => {
 			gsap.fromTo(
 				title as Element,
-				{ 
-					opacity: 0, 
-					y: 50 
+				{
+					opacity: 0,
+					y: 50
 				},
 				{
 					opacity: 1,
@@ -43,14 +43,14 @@
 				}
 			);
 		});
-		
+
 		// Animate section content
 		gsap.utils.toArray('.section-content').forEach((content) => {
 			gsap.fromTo(
 				content as Element,
-				{ 
-					opacity: 0, 
-					y: 30 
+				{
+					opacity: 0,
+					y: 30
 				},
 				{
 					opacity: 1,
@@ -66,14 +66,14 @@
 				}
 			);
 		});
-		
+
 		// Animate projects with staggered effect
 		gsap.utils.toArray('.project-card').forEach((card, index) => {
 			gsap.fromTo(
 				card as Element,
-				{ 
-					opacity: 0, 
-					y: 30 
+				{
+					opacity: 0,
+					y: 30
 				},
 				{
 					opacity: 1,
@@ -183,21 +183,24 @@
 	<h2 class="section-title mb-16 inline-block">
 		<em class="shadow px-2 py-1">Side Quests</em>
 	</h2>
-	
+
 	<div class="section-content">
 		<p class="mb-8">
-			Here are some of the projects I've worked on over the years. Each represents a different chapter in my journey as a builder and creator.
+			I've been on a 3 year sabbatical since leaving Twitter. Here are some the passion projects
+			I've worked on since.
 		</p>
-		
+
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			{#each data.projects as project, i}
 				<a href="/projects/{project.slug}" class="group block project-card">
-					<div class="shadow hover rounded-lg overflow-hidden transition-all duration-200 bg-white/40">
+					<div
+						class="shadow hover rounded-lg overflow-hidden transition-all duration-200 bg-white/40"
+					>
 						<img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
 						<div class="p-6">
 							<h3 class="text-xl font-bold mb-2">{project.title}</h3>
 							<p class="text-gray-600 mb-2">{project.description}</p>
-							
+
 							<!-- Display tags -->
 							<div class="mb-2">
 								{#if project.tags && project.tags.length > 0}
@@ -206,7 +209,7 @@
 									{/each}
 								{/if}
 							</div>
-							
+
 							<p class="text-sm text-gray-500">
 								{formatDateRange(project.startDate, project.endDate)}
 							</p>
@@ -218,12 +221,148 @@
 	</div>
 </section>
 
+<!-- Learning Journey Section -->
+<!-- <section id="learning-journey" class="text-default px-6 mb-32 pt-16">
+	<h2 class="section-title mb-16 inline-block">
+		<em class="shadow px-2 py-1">Learning Journey</em>
+	</h2>
+
+	<div class="section-content">
+		<p class="mb-8">
+			I believe in continuous learning and growth. Here are some of the transformative learning
+			experiences that have shaped my perspective and skills.
+		</p>
+
+		<div class="space-y-4">
+			<a
+				href="https://productintuition.com"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="block hover:bg-gray-50 transition-colors"
+			>
+				<div
+					class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-b border-gray-100 pb-4"
+				>
+					<div class="flex-1">
+						<h3 class="text-lg font-bold">Product Intuition Course</h3>
+						<p class="text-gray-600 text-sm">
+							A deep dive into product thinking, user psychology, and building products that people
+							love.
+						</p>
+					</div>
+					<div class="text-sm text-gray-500 md:text-right whitespace-nowrap">2023</div>
+				</div>
+			</a>
+
+			<a
+				href="https://www.deeplearning.ai"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="block hover:bg-gray-50 transition-colors"
+			>
+				<div
+					class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-b border-gray-100 pb-4"
+				>
+					<div class="flex-1">
+						<h3 class="text-lg font-bold">AI & Machine Learning Course</h3>
+						<p class="text-gray-600 text-sm">
+							Comprehensive study of modern AI systems, focusing on practical applications and
+							ethical considerations.
+						</p>
+					</div>
+					<div class="text-sm text-gray-500 md:text-right whitespace-nowrap">2023</div>
+				</div>
+			</a>
+
+			<a
+				href="https://artofaccomplishment.com"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="block hover:bg-gray-50 transition-colors"
+			>
+				<div
+					class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-b border-gray-100 pb-4"
+				>
+					<div class="flex-1">
+						<h3 class="text-lg font-bold">Art of Accomplishment (AoA)</h3>
+						<p class="text-gray-600 text-sm">
+							A transformative program focused on personal growth, leadership, and creating
+							meaningful impact.
+						</p>
+					</div>
+					<div class="text-sm text-gray-500 md:text-right whitespace-nowrap">2022</div>
+				</div>
+			</a>
+
+			<a
+				href="https://www.ucbtheatre.com"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="block hover:bg-gray-50 transition-colors"
+			>
+				<div
+					class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-b border-gray-100 pb-4"
+				>
+					<div class="flex-1">
+						<h3 class="text-lg font-bold">Improv Comedy Classes</h3>
+						<p class="text-gray-600 text-sm">
+							Studied improvisational comedy to enhance creativity, spontaneity, and collaborative
+							skills.
+						</p>
+					</div>
+					<div class="text-sm text-gray-500 md:text-right whitespace-nowrap">2022</div>
+				</div>
+			</a>
+
+			<a
+				href="https://www.masterclass.com"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="block hover:bg-gray-50 transition-colors"
+			>
+				<div
+					class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-b border-gray-100 pb-4"
+				>
+					<div class="flex-1">
+						<h3 class="text-lg font-bold">Writing & Storytelling Courses</h3>
+						<p class="text-gray-600 text-sm">
+							Developed skills in narrative structure, creative writing, and effective
+							communication.
+						</p>
+					</div>
+					<div class="text-sm text-gray-500 md:text-right whitespace-nowrap">2021</div>
+				</div>
+			</a>
+
+			<a
+				href="https://www.nols.edu"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="block hover:bg-gray-50 transition-colors"
+			>
+				<div
+					class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-b border-gray-100 pb-4"
+				>
+					<div class="flex-1">
+						<h3 class="text-lg font-bold">Nature Survival & Wilderness Course</h3>
+						<p class="text-gray-600 text-sm">
+							Learned essential survival skills, wilderness navigation, and deepened connection with
+							nature.
+						</p>
+					</div>
+					<div class="text-sm text-gray-500 md:text-right whitespace-nowrap">2021</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</section> -->
+
 <!-- Things that have Shaped me Section -->
-<section id="shaped-me" class="text-default px-6 mb-32 pt-16">
+<!-- <section id="shaped-me" class="text-default px-6 mb-32 pt-16">
 	<h2 class="section-title mb-16 inline-block">
 		<em class="shadow px-2 py-1">Things that have Shaped me</em>
 	</h2>
-	
+
 	<div class="section-content">
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 			<div>
@@ -236,7 +375,7 @@
 					<li>Impro by Keith Johnstone</li>
 				</ul>
 			</div>
-			
+
 			<div>
 				<h3 class="text-xl font-bold mb-4">Experiences</h3>
 				<ul class="important-list space-y-3">
@@ -248,18 +387,18 @@
 				</ul>
 			</div>
 		</div>
-		
+
 		<div class="mt-12">
 			<h3 class="text-xl font-bold mb-4">Philosophies</h3>
 			<p>
-				I believe in building things that matter, prioritizing relationships over achievements, 
-				and maintaining a healthy sense of curiosity about the world. I try to approach life with 
-				a balance of ambition and contentment, always seeking to learn and grow while appreciating 
+				I believe in building things that matter, prioritizing relationships over achievements, and
+				maintaining a healthy sense of curiosity about the world. I try to approach life with a
+				balance of ambition and contentment, always seeking to learn and grow while appreciating
 				what I already have.
 			</p>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <style>
 	h1 {
@@ -295,7 +434,7 @@
 		top: 0;
 		display: block;
 	}
-	
+
 	/* Add smooth scrolling behavior */
 	:global(html) {
 		scroll-behavior: smooth;

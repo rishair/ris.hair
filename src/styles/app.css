@@ -261,6 +261,48 @@ button {
     margin-right: auto;
 }
 
+/* Add styling for unordered lists in markdown content */
+.prose ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin: 1rem 0;
+}
+
+.prose ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Add styling for nested lists if needed */
+.prose ul ul {
+    list-style-type: circle;
+    margin: 0.5rem 0;
+}
+
+/* Custom styling for h2 tags in markdown content */
+.prose h2 {
+    font-weight: 700; /* Make text bold */
+    margin-top: 2.5rem; /* Increase top margin */
+    margin-bottom: 1.5rem; /* Decrease bottom margin from 42px */
+    padding-bottom: 0.2rem; /* Space between text and underline */
+    display: inline-block; /* Make the underline only as wide as the text */
+    position: relative; /* For positioning the pseudo-element */
+    border-bottom: none; /* Remove the straight border */
+}
+
+/* Hand-written swoop underline effect */
+.prose h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #006b56; /* Forest green color */
+    border-radius: 50% 40%; /* Creates a slight curve */
+    transform: scaleY(0.5) skewX(-12deg); /* Adds a slight slant and thins it */
+    transform-origin: bottom; /* Ensures the transform happens from the bottom */
+}
+
 /* Specific styling for em and strong elements in Markdown content */
 .prose em {
     font-style: italic;

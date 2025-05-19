@@ -1,0 +1,22 @@
+title: Juice
+description: AI-powered event discovery platform
+link: https://gotjuice.app
+image: /images/projects/juice/screen3.png
+startDate: April 2025
+slug: juice
+tags:
+  - ai
+  - prototype
+atAGlance:
+  - Get notified of events that fall into your interests
+  - Uses AI to build scrapers and keep realtime information of events at venues
+  - iOS & web app 
+fullDescription: |
+  More soon.
+gallery:
+  - src: /images/projects/juice/screen1.png
+    caption: All events screen
+  - src: /images/projects/juice/screen2.png
+    caption: Single event screen
+  - src: /images/projects/juice/logo.png
+    caption: Experimenting with branding

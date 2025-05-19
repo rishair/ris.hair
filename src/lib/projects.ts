@@ -16,8 +16,14 @@ export async function getAllProjects() {
 
 	// Sort projects by date (most recent first)
 	return projects.sort((a, b) => {
-		const dateA = new Date(a.startDate);
-		const dateB = new Date(b.startDate);
+		if (!a.endDate) {
+			return -1;
+		}
+		if (!b.endDate) {
+			return 1;
+		}
+		const dateA = new Date(a.endDate);
+		const dateB = new Date(b.endDate);
 		return dateB.getTime() - dateA.getTime();
 	});
 }

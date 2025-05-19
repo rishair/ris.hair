@@ -1,4 +1,4 @@
-title: Robot Santa Twitter Bot
+title: Robosanta Twitter Bot
 description: Snarky Santa that roasted people on Twitter for being naughty/nice, powered by an AI writing room. Attached to a memecoin 📈
 tags: 
   - ai
@@ -9,45 +9,70 @@ startDate: December 2024
 endDate: December 2024
 slug: ai-santa
 atAGlance:
-  - Launched an AI Santa that roasted people for being naughty/nice
+  - Launched an AI Santa that roasted people for being naughty & nice
   - Attached a memecoin ($COAL), went micro-viral
   - Market cap went from $10K > $1M > $10K in 2 weeks
+  - Unvoluntarily exposed to the bowels of crypto culture
 fullDescription: |
-  The month was December 2024. Fartcoin hit it's all-time high and CBS was talking about the "memecoin rage". The crypto community was foaming at the mouth over low-quality AI products.
+  It was December 2024. Fartcoin hit its all-time high and the crypto community was foaming over k-mart quality AI bots. 
 
-  With Christmas coming up, I built an AI Santa (@robosantahoho) that read people's tweets and profiles, assigned them a naughty/nice score then roasted them accordingly.
+  I'd been experimenting with AI for 2yrs then, and building a sentient Twitter being felt like a fun challenge. With Christmas coming up, I put together an AI Santa (@robosantahoho) that read tweets and profiles, assigned a naughty/nice score then roasted them accordingly.
 
-  Here's an exceprt from the prompt, to get an idea of the tone:
+  I launched it on Twitter and attached it to a memecoin ($COAL) not expecting much. It started off slow but within the hour it caught steam and shot up 10x in value. By hour four it 100x'd and hit a $1M market cap.
+
+  ![Santa's Twitter profile](/images/projects/ai-santa/profile.png "Santa's Twitter profile")
   
-  > You are Santa. Your personality has the crassness of Rick from Rick and Morty, and the succinct wit and low-key savageness of Mark Twain
+  I started a telegram group for fans, started live-tweeting about how it was built, got accused and attacked for rug-pulling, then *defended* by a internet strangers. It was a unexpectedly exhilerating ride, but after 2 days the hype died down and my interest did too. I then shut down Santa a couple days later. There was a lot to learn from the experiment though.
 
-  Santa was **funny**.
 
-  ![Santa's Twitter Profile](/images/projects/ai-santa/profile.png "The AI Santa Twitter profile that roasted people for being naughty")
+  ## Giving AI humor
 
-  To begin with
+  It took some tinkering, but AI Santa was regularly putting bangers. Here's a favorite:
 
-  This project was a doozey. It started as an experiment in building an AI personality that didn't feel so sterile. The combination of AI agents working together created a unique voice that was both entertaining and engaging.
+  ![Example tweet](/images/projects/ai-santa/example_tweet.png "Look at that double entendre!") 
 
-  ```javascript
-  // Example of how the AI agents were orchestrated
-  function createRoast(target, naughtyLevel) {
-    const basePrompt = `Create a roast for ${target} who has been ${naughtyLevel} naughty`;
-    const firstDraft = firstAgent.generate(basePrompt);
-    const refinedDraft = editorAgent.refine(firstDraft);
-    return wittyAgent.addHumor(refinedDraft);
-  }
-  ```
+  As you know, if you tell ChatGPT to be funny, it does a spectacular job of doing the opposite. By default, its jokes are unoriginal, verbose, and tacky. There's a lot you can do with a prompt, but it'd only get you so far. 
 
-  > The project went viral faster than expected. Within 48 hours, we had thousands of followers and the $COAL token skyrocketed from a $10K market cap to over $1M.
+  What worked was pairing Santa with a ruthless editor that would critique his tweets until they met a quality bar. If they didn't, then the tweet would be thrown out. Santa and the editor would at times take 5-10 back and forths until they were satisfied.
 
-  ![Market Cap Growth](/images/projects/ai-santa/market.png "The meteoric rise and fall of the $COAL token")
-gallery:
-  - src: /images/projects/ai-santa/example_tweet.png
-    caption: Santa's wit on display
-  - src: /images/projects/ai-santa/market.png
-    caption: Market cap goes from $10K -> $1M back to $100K
-  - src: /images/projects/ai-santa/profile.png
-    caption: Badass Santa's profile
-  - src: /images/projects/ai-santa/website.png
-    caption: Christmas countdown at https://robosanta.xyz
+  <insert image of santa talking to an elf, is this good enough?>
+
+  Here's some of the criteria the editor used:
+
+    * Playfulness - does it respond to and riff off other replies in the conversation?
+    * Reasoning - how well does it make sense or is it a stretch?
+    * Authenticity - does it feel natural or forced? are we trying too hard to be clever?
+    * Cringe factor - are we leaning too hard into Santa-isms or forced puns?
+    * Economy of Punchline - does the joke land quickly or are we explaining/extending it too much?
+    * No obscure references - are there references that are try-hard?
+  
+  The resulting tweets are hyper-sensitive to every word in the editor. This is the litmus test for a [chaotic system](https://www.youtube.com/watch?v=fDek6cYijxI) - when outputs are hyper sensitive to small changes in the input.
+
+
+  A first draft from Santa would go from this:
+
+  > a billion dollar shart market. peak 2024 energy. congrats on being filthy rich and still smelling like drive-thru bathrooms.
+
+  to this:
+
+  > bullish on gas fees  
+
+  *Nice*. Quick, witty, snappy. Me likey.
+
+  If you'd like to see the code, check it on github at [@rishair/santa](https://github.com/rishair/santa).
+
+  ## Memecoins = Zero Sum = In-fighting
+
+  In the memecoin world, at least today, every time you make money, somebody else loses money, and that's because there isn't new money coming into the system. 
+  
+  You *feel* that competitiveness in the community. People have been scammed, robbed, rug-pulled, lied to, spat on, shat on. It's called "the trenches" for a reason. Everybody is skeptical of everyone, yet they're in it to win a life-changing amount of money. Yet the winners can get a life-changing amount of money.
+
+  This breeds a sense of hostility and skepticism. Without new value being created, it's a massive gambling arena where nobody wants to be the sucker. I got accused for scamming and rug-pulling, and even though I didn't - I felt the temptation to because I was already being lauded as the villain that would (I get it, Joker). The methods I saw for "building trust" were performative and self-sacrificial. The expectation is to publicly sacrifice your chances at making money to prove your fealty to the coin. Even if you did everything right, chances are you'd still get put on blast. 
+
+  Anyway, I left with a sour taste in my mouth for the crypto community after this, but I did meet some genuine gems in the process and have a hell of a story to tell.
+
+  ## Pics speak a thousand words
+
+  ![Market Cap Growth](/images/projects/ai-santa/market.png "The great rise and fall of the $COAL token")
+
+  ![Christmas Countdown](/images/projects/ai-santa/website.png "Home page that kept track of how 'kind' the internet was")
