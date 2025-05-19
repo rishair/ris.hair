@@ -37,8 +37,18 @@
 
 	// Function to handle keyboard events
 	function handleKeydown(event: KeyboardEvent): void {
-		if (event.key === 'Escape' && isLightboxOpen) {
-			closeLightbox();
+		if (!isLightboxOpen) return;
+
+		switch (event.key) {
+			case 'Escape':
+				closeLightbox();
+				break;
+			case 'ArrowLeft':
+				showPrevImage();
+				break;
+			case 'ArrowRight':
+				showNextImage();
+				break;
 		}
 	}
 
