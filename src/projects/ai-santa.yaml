@@ -10,7 +10,7 @@ endDate: December 2024
 slug: ai-santa
 atAGlance:
   - Launched an AI Santa that roasted people for being naughty & nice
-  - Attached a memecoin ($COAL), went micro-viral
+  - Attached a memecoin ($COAL), went pico-viral
   - Market cap went from $10K > $1M > $10K in 2 weeks
   - Unvoluntarily exposed to the bowels of crypto culture
 fullDescription: |
@@ -35,8 +35,6 @@ fullDescription: |
 
   What worked was pairing Santa with a ruthless editor that would critique his tweets until they met a quality bar. If they didn't, then the tweet would be thrown out. Santa and the editor would at times take 5-10 back and forths until they were satisfied.
 
-  <insert image of santa talking to an elf, is this good enough?>
-
   Here's some of the criteria the editor used:
 
     * Playfulness - does it respond to and riff off other replies in the conversation?
@@ -45,9 +43,10 @@ fullDescription: |
     * Cringe factor - are we leaning too hard into Santa-isms or forced puns?
     * Economy of Punchline - does the joke land quickly or are we explaining/extending it too much?
     * No obscure references - are there references that are try-hard?
-  
-  The resulting tweets are hyper-sensitive to every word in the editor. This is the litmus test for a [chaotic system](https://www.youtube.com/watch?v=fDek6cYijxI) - when outputs are hyper sensitive to small changes in the input.
 
+  ![Comic strip](/images/projects/ai-santa/comic.png) 
+  
+  The resulting tweets are hyper-sensitive to every word in the editor's prompt. That's because Santa and the editor amplified each other with each round of revisions. This ends up being a more [chaotic system](https://www.youtube.com/watch?v=fDek6cYijxI) - where tiny changes to the input could lead to wildly different outputs. That property of the agents was key to getting solid tweets out.
 
   A first draft from Santa would go from this:
 
@@ -63,16 +62,18 @@ fullDescription: |
 
   ## Memecoins = Zero Sum = In-fighting
 
-  In the memecoin world, at least today, every time you make money, somebody else loses money, and that's because there isn't new money coming into the system. 
+  In today's memecoin world, every time you make money, somebody else loses money. That wouldn't be the case if there was new money coming into the system.
   
-  You *feel* that competitiveness in the community. People have been scammed, robbed, rug-pulled, lied to, spat on, shat on. It's called "the trenches" for a reason. Everybody is skeptical of everyone, yet they're in it to win a life-changing amount of money. Yet the winners can get a life-changing amount of money.
+  You can smell that competitiveness in the crypto culture. People have been scammed, robbed, rug-pulled, lied to, spat on, shat on -- it's called "the trenches" for a reason. Everybody is skeptical of everyone but the rewards are real: life-changing amounts of money.
 
-  This breeds a sense of hostility and skepticism. Without new value being created, it's a massive gambling arena where nobody wants to be the sucker. I got accused for scamming and rug-pulling, and even though I didn't - I felt the temptation to because I was already being lauded as the villain that would (I get it, Joker). The methods I saw for "building trust" were performative and self-sacrificial. The expectation is to publicly sacrifice your chances at making money to prove your fealty to the coin. Even if you did everything right, chances are you'd still get put on blast. 
+  Without new value being created, it's a massive gambling arena where nobody wants to be the sucker. I got accused for scamming and rug-pulling, and even though I didn't - I understood the temptation to, because it's so easy. 
+  
+  The methods I saw for "building trust" were performative and self-sacrificial. The expectation is to publicly sacrifice your chances at making money to prove your fealty to a coin. Even if you did everything right to demonstrate you can't gain from it, chances are you'd still get put on blast. 
 
   Anyway, I left with a sour taste in my mouth for the crypto community after this, but I did meet some genuine gems in the process and have a hell of a story to tell.
 
-  ## Pics speak a thousand words
+  ## Couple more pics
 
-  ![Market Cap Growth](/images/projects/ai-santa/market.png "The great rise and fall of the $COAL token")
+  ![Market Cap Growth](/images/projects/ai-santa/market.png "The great rise and fall of the $COAL token. Those bounces came from me posting twitter updates.")
 
   ![Christmas Countdown](/images/projects/ai-santa/website.png "Home page that kept track of how 'kind' the internet was")

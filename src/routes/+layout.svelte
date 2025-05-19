@@ -1,16 +1,22 @@
-<script>
+<script lang="ts">
 	import '../styles/app.css';
+	import { page } from '$app/stores';
 
-	const navItems = [];
+	interface NavItem {
+		href: string;
+		label: string;
+	}
+
+	const navItems: NavItem[] = [];
 </script>
 
 <svelte:head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta property="og:title" content="Rishi Ishairzay" />
+	<meta property="og:title" content={$page.data.title || 'Rishi Ishairzay'} />
 	<meta property="og:description" content="I'm an AI product engineer in Brooklyn, NY." />
 
-	<title>Rishi Ishairzay</title>
+	<title>{$page.data.title || 'Rishi Ishairzay'}</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link

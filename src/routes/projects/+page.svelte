@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>Projects | Rishi Ishairzay</title>
+	<title>Projects / Rishi</title>
 	<meta name="description" content="Projects and work by Rishi Ishairzay" />
 </svelte:head>
 

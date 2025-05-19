@@ -35,12 +35,21 @@
 	// Combined gallery of project gallery images and inline markdown images
 	let allImages: GalleryImage[] = [];
 
+	// Function to handle keyboard events
+	function handleKeydown(event: KeyboardEvent): void {
+		if (event.key === 'Escape' && isLightboxOpen) {
+			closeLightbox();
+		}
+	}
+
 	// Function to open the lightbox for gallery images
 	function openLightbox(index: number): void {
 		currentImageIndex = index;
 		currentImageSrc = allImages[index].src;
 		currentImageCaption = allImages[index].caption || '';
 		isLightboxOpen = true;
+		// Add keyboard event listener when lightbox opens
+		window.addEventListener('keydown', handleKeydown);
 	}
 
 	// Function to open the lightbox for inline markdown images
@@ -55,12 +64,16 @@
 			currentImageCaption = caption || '';
 			currentImageIndex = -1; // Special value to indicate it's not in the gallery
 			isLightboxOpen = true;
+			// Add keyboard event listener when lightbox opens
+			window.addEventListener('keydown', handleKeydown);
 		}
 	}
 
 	// Function to close the lightbox
 	function closeLightbox(): void {
 		isLightboxOpen = false;
+		// Remove keyboard event listener when lightbox closes
+		window.removeEventListener('keydown', handleKeydown);
 	}
 
 	// Functions to navigate between images
@@ -105,7 +118,7 @@
 </script>
 
 <svelte:head>
-	<title>{project.title} | Rishi Ishairzay</title>
+	<title>{project.title} / Rishi</title>
 	<meta name="description" content={project.description} />
 </svelte:head>
 
