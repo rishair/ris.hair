@@ -2,6 +2,7 @@
 	import { processMarkdown } from '$lib/utils';
 	import { onMount } from 'svelte';
 	import TagPill from '$lib/components/TagPill.svelte';
+	import HeartSticker from '$lib/components/HeartSticker.svelte';
 	import { fade, fly } from 'svelte/transition';
 
 	export let data: { project: any; prevProject: any; nextProject: any };
@@ -11,6 +12,10 @@
 	$: prevProject = data.prevProject;
 	$: nextProject = data.nextProject;
 	$: processedDescription = processMarkdown(project.fullDescription);
+	$: tagsNoFavorite = project?.tags
+		? (project.tags as string[]).filter((t) => t !== 'favorite')
+		: [];
+	$: atAGlanceHtml = processMarkdown(project.atAGlance.map((p: string) => `-> ${p}`).join('\n'));
 
 	// Function to format date range for projects
 	function formatDateRange(startDate: string, endDate: string | undefined) {
@@ -187,8 +192,11 @@
 </svelte:head>
 
 <section class="text-default px-6" in:fly={{ y: 20, duration: 400 }} out:fade={{ duration: 200 }}>
-	<h1 class="name mb-2">
+	<h1 class="name mb-2 relative">
 		<em class="shadow px-2 py-1">{project.title}</em>
+		{#if project.tags && project.tags.includes('favorite')}
+			<HeartSticker />
+		{/if}
 	</h1>
 
 	<!-- Display date -->
@@ -198,8 +206,8 @@
 
 	<!-- Display tags -->
 	<div class="mb-6">
-		{#if project.tags && project.tags.length > 0}
-			{#each project.tags as tag}
+		{#if tagsNoFavorite.length > 0}
+			{#each tagsNoFavorite as tag}
 				<TagPill {tag} variant="green" />
 			{/each}
 		{/if}
@@ -209,7 +217,7 @@
 		<div class="lg:col-span-3">
 			<h2 class="text-xl font-bold mb-4">At a Glance</h2>
 			<div class="prose">
-				{@html processMarkdown(project.atAGlance.map((point) => `-> ${point}`).join('\n'))}
+				{@html atAGlanceHtml}
 			</div>
 		</div>
 

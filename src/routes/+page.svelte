@@ -3,6 +3,11 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import TagPill from '$lib/components/TagPill.svelte';
+	import HeartSticker from '$lib/components/HeartSticker.svelte';
+
+	function withoutFavorite(tags: string[] = []) {
+		return tags.filter((t) => t !== 'favorite');
+	}
 
 	export let data;
 
@@ -185,14 +190,28 @@
 	</h2>
 
 	<div class="section-content">
-		<p class="mb-8">Recent passion projects I've worked on.</p>
+		<p class="mb-8">
+			Recent projects I've worked on. Personal favorites have a <HeartSticker
+				rotation={20}
+				position="inline"
+				size="small"
+			/>.
+		</p>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			{#each data.projects as project, i}
 				<a href={'/projects/' + project.slug} class="group block project-card">
 					<div
-						class="shadow hover rounded-lg overflow-hidden transition-all duration-200 bg-white/40 border-8 border-white/40"
+						class="shadow hover rounded-lg overflow-visible transition-all duration-200 bg-white/40 border-8 border-white/40 relative"
 					>
+						{#if project.tags && project.tags.includes('favorite')}
+							<HeartSticker
+								rotation={20}
+								position="sticker-top-right"
+								size="large"
+								borderWidth={3}
+							/>
+						{/if}
 						<img
 							src={project.image}
 							alt={project.title}
@@ -205,7 +224,7 @@
 							<!-- Display tags -->
 							<div class="mb-2">
 								{#if project.tags && project.tags.length > 0}
-									{#each project.tags as tag}
+									{#each withoutFavorite(project.tags) as tag}
 										<TagPill {tag} variant="grey" />
 									{/each}
 								{/if}
