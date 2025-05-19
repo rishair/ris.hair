@@ -191,7 +191,7 @@
 			{#each data.projects as project, i}
 				<a href="/projects/{project.slug}" class="group block project-card">
 					<div
-						class="shadow hover rounded-lg overflow-hidden transition-all duration-200 bg-white/40"
+						class="shadow hover rounded-lg overflow-hidden transition-all duration-200 bg-white/40 border-8 border-white/40"
 					>
 						<img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
 						<div class="p-6">
@@ -207,7 +207,7 @@
 								{/if}
 							</div>
 
-							<p class="text-sm text-gray-500">
+							<p class="text-sm text-gray-500 mb-0">
 								{formatDateRange(project.startDate, project.endDate)}
 							</p>
 						</div>
