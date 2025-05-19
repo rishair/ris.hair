@@ -191,7 +191,7 @@
 	<meta name="description" content={project.description} />
 </svelte:head>
 
-<section class="text-default px-6" in:fly={{ y: 20, duration: 400 }} out:fade={{ duration: 200 }}>
+<section class="text-default px-6">
 	<h1 class="name mb-2 relative">
 		<em class="shadow px-2 py-1">{project.title}</em>
 		{#if project.tags && project.tags.includes('favorite')}
