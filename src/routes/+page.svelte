@@ -185,10 +185,7 @@
 	</h2>
 
 	<div class="section-content">
-		<p class="mb-8">
-			I've been on a 3 year sabbatical since leaving Twitter. Here are some the passion projects
-			I've worked on since.
-		</p>
+		<p class="mb-8">Recent passion projects I've worked on.</p>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			{#each data.projects as project, i}
@@ -205,7 +202,7 @@
 							<div class="mb-2">
 								{#if project.tags && project.tags.length > 0}
 									{#each project.tags as tag}
-										<TagPill {tag} />
+										<TagPill {tag} variant="grey" />
 									{/each}
 								{/if}
 							</div>
