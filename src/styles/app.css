@@ -105,7 +105,7 @@ a {
 
 h1,
 h2 {
-    margin-bottom: 42px;
+    margin-bottom: 32px;
 }
 
 p {
@@ -188,12 +188,14 @@ button {
 
 .important-list li {
     position: relative;
+    list-style: none;
 }
 
-.important-list li::marker {
+.important-list li::before {
     content: "→ ";
     @apply text-orange;
-    margin-right: 2em;
+    position: absolute;
+    left: -2rem;
 }
 
 /* Markdown styling */
@@ -217,8 +219,10 @@ button {
 }
 
 .prose blockquote {
-    border-left: 4px solid #E37769;
-    padding-left: 1rem;
+    border: 1px solid #E3776933;
+    border-radius: 0.5rem;
+    border-left: 4px solid #E37769cc;
+    padding-left: 1.8rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin: 2rem 0;
@@ -265,13 +269,14 @@ button {
 }
 
 .prose figure {
-    margin: 2rem 0;
+    margin: 3.5rem 0;
 }
 
 .prose figure img {
     width: 80%;
     margin: 0 auto;
     display: block;
+    border: 1px solid #E3776933;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     transition: transform 0.2s;
@@ -312,7 +317,7 @@ button {
 /* Custom styling for h2 tags in markdown content */
 .prose h2 {
     font-weight: 500;
-    margin-top: 2.5rem;
+    margin-top: 2.0rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.2rem;
     display: inline-block;
@@ -343,7 +348,7 @@ button {
 
 .prose strong {
     font-weight: 500;
-    color: #1f2937;
+    /* color: #1f2937; */
 }
 
 .prose blockquote.no-italic p {

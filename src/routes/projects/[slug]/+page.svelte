@@ -170,11 +170,9 @@
 	<div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mt-12">
 		<div class="lg:col-span-3">
 			<h2 class="text-xl font-bold mb-4">At a Glance</h2>
-			<ul class="important-list mb-6">
-				{#each project.atAGlance as point}
-					<li class="mb-2">{@html processMarkdown(point)}</li>
-				{/each}
-			</ul>
+			<div class="prose">
+				{@html processMarkdown(project.atAGlance.map((point) => `-> ${point}`).join('\n'))}
+			</div>
 		</div>
 
 		<div class="lg:col-span-1">

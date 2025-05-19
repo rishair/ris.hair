@@ -180,7 +180,7 @@
 
 <!-- Side Quests Section -->
 <section id="side-quests" class="text-default px-6 mb-32 pt-16">
-	<h2 class="section-title mb-16 inline-block">
+	<h2 class="section-title inline-block">
 		<em class="shadow px-2 py-1">Side Quests</em>
 	</h2>
 

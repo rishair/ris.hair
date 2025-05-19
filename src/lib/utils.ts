@@ -20,6 +20,18 @@ export function processMarkdown(content: string): string {
 
 	let processedContent = content;
 
+	// Process special arrow bullets: -> item
+	processedContent = processedContent.replace(
+		/^->\s+(.*)$/gm,
+		'<li class="important-list-item">$1</li>'
+	);
+
+	// Wrap consecutive important list items in a ul, but preserve the following newline
+	processedContent = processedContent.replace(
+		/(<li class="important-list-item">.*?<\/li>\n?)+/g,
+		(match) => `<ul class="important-list">${match.trim()}</ul>\n`
+	);
+
 	// Process blockquotes: group consecutive lines starting with '>' or '>!'
 	processedContent = processedContent.replace(
 		/(^>!.*(?:\n>!.*)*)|(^>.*(?:\n>.*)*)/gm,
@@ -71,6 +83,12 @@ export function processMarkdown(content: string): string {
 				${caption ? `<figcaption class="text-sm text-gray-500 mt-2">${caption}</figcaption>` : ''}
 			</figure>`;
 		}
+	);
+
+	// Process horizontal rules with extra spacing
+	processedContent = processedContent.replace(
+		/^---$/gm,
+		'<div class="my-12"><hr class="border-gray-200" /></div>'
 	);
 
 	try {

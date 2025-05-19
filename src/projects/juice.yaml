@@ -7,6 +7,7 @@ slug: juice
 tags:
   - ai
   - prototype
+  - local events
 atAGlance:
   - Get notified of events that fall into your interests
   - Uses AI to build scrapers and keep realtime information of events at venues

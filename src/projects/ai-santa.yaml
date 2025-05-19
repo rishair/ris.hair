@@ -1,8 +1,9 @@
 title: Robosanta Twitter Bot
-description: Snarky Santa that roasted people on Twitter for being naughty/nice, powered by an AI writing room. Attached to a memecoin 📈
+description: Snarky Santa that roasted people on Twitter for being naughty or nice, powered by an AI writing room. Launched with a memecoin that went pico-viral.
 tags: 
   - ai
   - crypto
+  - fun
 link: https://x.com/robosantahoho
 image: /images/projects/ai-santa/santa.jpg
 startDate: December 2024
@@ -50,15 +51,15 @@ fullDescription: |
 
   A first draft from Santa would go from this:
 
-  > a billion dollar shart market. peak 2024 energy. congrats on being filthy rich and still smelling like drive-thru bathrooms.
+  >! a billion dollar shart market. peak 2024 energy. congrats on being filthy rich and still smelling like drive-thru bathrooms.
 
   to this:
 
-  > bullish on gas fees  
+  >! bullish on gas fees  
 
   *Nice*. Quick, witty, snappy. Me likey.
 
-  If you'd like to see the code, check it on github at [@rishair/santa](https://github.com/rishair/santa).
+  If you'd like to see the code or make your own bot, check it on github at [@rishair/santa](https://github.com/rishair/santa).
 
   ## Memecoins = Zero Sum = In-fighting
 
