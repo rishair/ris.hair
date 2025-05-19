@@ -1,5 +1,5 @@
 title: Ember
-description: An AI-powered journal that helps you get a birds-eye view of your thoughts.
+description: An AI-powered notes app that dreams on your behalf
 image: /images/projects/ember/bg.png
 startDate: January 2025
 endDate: March 2025
@@ -8,6 +8,15 @@ tags:
   - ai
   - prototype
 atAGlance:
-  - More soon
+  - Quickly take 1 sentence to 1 page long notes
+  - Chat with all of your notes
+  - Dreams on your behalf, making connections for you
 fullDescription: |
-  More soon
+  I'm a recovered note-taking nerd, hopping from Bear to Roam to Tana to Obsidian. What I've been searching for is a way to take my sporadic thoughts and make connections between them. It could be between sets at the gym, or wanting to voice my thoughts on a walk.
+
+  That's what led to Ember. It's an app that let's you take quick notes, let's you chat with them, and dreams on your behalf and presents you with connections between them.
+
+  The most fun part of working on this was architecting an AI-memory that's conducive to connecting thoughts.
+
+  ## Creating an AI Memory
+  

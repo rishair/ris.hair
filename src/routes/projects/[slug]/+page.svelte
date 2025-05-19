@@ -24,6 +24,7 @@
 	interface GalleryImage {
 		src: string;
 		caption?: string;
+		type: string;
 	}
 
 	// State variables for the lightbox
@@ -109,17 +110,32 @@
 		allImages = [
 			...(project.gallery || []),
 			// Add any markdown images that aren't already in the gallery
-			...Array.from(document.querySelectorAll('.markdown-image')).map((img) => ({
-				src: img.getAttribute('src') || '',
-				caption: img.getAttribute('data-caption') || ''
-			}))
+			...Array.from(document.querySelectorAll('.markdown-image, .markdown-video')).map((el) => {
+				const isVideo = el.classList.contains('markdown-video');
+				const caption = el.getAttribute('data-caption');
+				if (isVideo) {
+					return {
+						src: el.querySelector('source')?.getAttribute('src'),
+						caption: caption,
+						type: 'video'
+					};
+				} else {
+					return {
+						src: el.getAttribute('src'),
+						type: 'image',
+						caption: el.getAttribute('data-caption')
+					};
+				}
+			})
 		];
 
+		console.log(allImages);
+
 		// Add click handlers to all markdown images
-		document.querySelectorAll('.markdown-image').forEach((img) => {
+		document.querySelectorAll('.markdown-image, .markdown-video').forEach((img) => {
 			img.addEventListener('click', () => {
 				openLightboxForMarkdownImage(
-					img.getAttribute('src') || '',
+					img.getAttribute('src') || img.querySelector('source')?.getAttribute('src') || '',
 					img.getAttribute('data-caption') || ''
 				);
 			});
@@ -156,7 +172,7 @@
 			<h2 class="text-xl font-bold mb-4">At a Glance</h2>
 			<ul class="important-list mb-6">
 				{#each project.atAGlance as point}
-					<li class="mb-2">{point}</li>
+					<li class="mb-2">{@html processMarkdown(point)}</li>
 				{/each}
 			</ul>
 		</div>
@@ -235,7 +251,24 @@
 
 				<!-- Image and caption container -->
 				<div class="w-full">
-					<img src={currentImageSrc} alt={currentImageCaption} class="w-full rounded-lg" />
+					{#if allImages[currentImageIndex]?.type === 'video'}
+						<video
+							src={currentImageSrc}
+							class="w-full rounded-lg"
+							autoplay
+							muted
+							loop
+							playsinline
+							controls
+							poster="/video/fallback.jpg"
+						>
+							<source src="${allImages[currentImageIndex]?.src}" type="video/mp4" />
+							${allImages[currentImageIndex]?.caption ||
+								'Your browser does not support the video tag.'}
+						</video>
+					{:else}
+						<img src={currentImageSrc} alt={currentImageCaption} class="w-full rounded-lg" />
+					{/if}
 
 					{#if currentImageCaption}
 						<p class="text-center text-white mt-4">

@@ -1,6 +1,6 @@
 title: My Year in Poetry
 description: Analyzed all my journal entries in 2024, clustered common themes, and created AI poetry and art.
-image: /images/projects/journey.png
+image: /images/projects/journey/clusters.png
 startDate: November 2024
 endDate: November 2024
 slug: year-in-poetry
@@ -9,4 +9,24 @@ tags:
 atAGlance:
   - More soon
 fullDescription: |
-  More soon
+  In 2024, I had a nearly-daily habit of doing morning pages. I wrote a total of 200+ entries through the year and I wanted to understand the common themes that I kept swirling around. 
+
+
+  As a disclaimer, 2024 was a particularly tough year for *reasons* and my journaling practice was my rock. 
+
+  ![Entries](/images/projects/journey/slide_1_entries.png)
+
+  !video[Clusters](/images/projects/journey/clusters.mp4 "Embeddings of questions I thought about in 2024")
+  ![Questions](/images/projects/journey/slide_2_implicit.png)
+  ![Questions](/images/projects/journey/slide_3_questions.png)
+
+  ![Embeddings](/images/projects/journey/slide_4_embeddings.png)
+  
+
+  >! ## Morning Invocation
+  >! And so, as the sun greets another day, I speak these truths to my awakening spirit:  
+  >! I am not broken seeking wholeness, but whole seeking expression. I am not lost seeking direction, but exploring seeking wisdom.  I am not empty seeking fulfillment, but full seeking flow. I am not alone seeking connection, but connected seeking depth.
+  >! Let me move through this day as water moves through the river's course - flowing with purpose, yielding without losing direction, powerful in gentleness, clear in nature, and ever true to my own depths.
+  >! For in this journey of becoming, I am already complete. In this dance of growth, I am already whole. In this quest for connection, I am already home. In this search for meaning, I am already found.
+  >! And with each breath, I remember: I am the author of my story, The keeper of my truth, The holder of my power, And the vessel of possibility.
+  >! **So let it be.**

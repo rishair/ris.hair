@@ -47,7 +47,11 @@ body {
 }
 
 /* Styling for em elements in headings and special sections */
-h1 em, h2 em, h3 em, .section-title em, .name em {
+h1 em,
+h2 em,
+h3 em,
+.section-title em,
+.name em {
     @apply bg-link-color;
     @apply bg-forest-green;
     color: #fff;
@@ -61,7 +65,7 @@ em {
 
 /* Default styling for strong elements */
 strong {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 h1 em {
@@ -227,10 +231,37 @@ button {
     box-sizing: border-box;
 }
 
+.prose blockquote br {
+    display: inline;
+}
+
+.prose blockquote br::after {
+    content: "";
+    display: block;
+    height: 0.5em;
+}
+
 .prose blockquote p {
-    margin-bottom: 0;
     color: #4b5563;
     font-style: italic;
+    margin-top: 0.5em;
+    margin-bottom: 0.8em;
+    padding-right: 2em;
+    line-height: 1.6em;
+}
+
+.prose blockquote h2,
+.prose blockquote h3,
+.prose blockquote h4,
+.prose blockquote h5,
+.prose blockquote h6 {
+    @apply text-orange;
+}
+
+.prose blockquote h2 {
+    font-size: 1.25em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .prose figure {
@@ -280,27 +311,27 @@ button {
 
 /* Custom styling for h2 tags in markdown content */
 .prose h2 {
-    font-weight: 700; /* Make text bold */
-    margin-top: 2.5rem; /* Increase top margin */
-    margin-bottom: 1.5rem; /* Decrease bottom margin from 42px */
-    padding-bottom: 0.2rem; /* Space between text and underline */
-    display: inline-block; /* Make the underline only as wide as the text */
-    position: relative; /* For positioning the pseudo-element */
-    border-bottom: none; /* Remove the straight border */
+    font-weight: 500;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.2rem;
+    display: inline-block;
+    position: relative;
+    border-bottom: none;
 }
 
-/* Hand-written swoop underline effect */
-.prose h2::after {
+/* Hand-written swoop underline effect - only for h2s not in blockquotes */
+.prose h2:not(blockquote h2)::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 5px;
-    background-color: #006b56; /* Forest green color */
-    border-radius: 50% 40%; /* Creates a slight curve */
-    transform: scaleY(0.5) skewX(-12deg); /* Adds a slight slant and thins it */
-    transform-origin: bottom; /* Ensures the transform happens from the bottom */
+    background-color: #006b56;
+    border-radius: 50% 40%;
+    transform: scaleY(0.5) skewX(-12deg);
+    transform-origin: bottom;
 }
 
 /* Specific styling for em and strong elements in Markdown content */
@@ -311,6 +342,10 @@ button {
 }
 
 .prose strong {
-    font-weight: 700;
+    font-weight: 500;
     color: #1f2937;
+}
+
+.prose blockquote.no-italic p {
+    font-style: normal;
 }

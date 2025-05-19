@@ -22,18 +22,18 @@ fullDescription: |
 
   ![Santa's Twitter profile](/images/projects/ai-santa/profile.png "Santa's Twitter profile")
   
-  I started a telegram group for fans, started live-tweeting about how it was built, got accused and attacked for rug-pulling, then *defended* by a internet strangers. It was a unexpectedly exhilerating ride, but after 2 days the hype died down and my interest did too. I then shut down Santa a couple days later. There was a lot to learn from the experiment though.
+  I was asked to start a telegram group for fans, started live-tweeting about how it was built, got accused and attacked for rug-pulling, then *defended* by good samaritan internet strangers. It was a unexpectedly exhilerating ride, but after 2 days the hype died down and my interest did too. I shut down Santa a couple days later. There was a lot to learn from the experiment though.
 
 
   ## Giving AI humor
 
-  It took some tinkering, but AI Santa was regularly putting bangers. Here's a favorite:
+  It took some tinkering, but AI Santa was regularly putting out bangers. Here's a favorite:
 
   ![Example tweet](/images/projects/ai-santa/example_tweet.png "Look at that double entendre!") 
 
-  As you know, if you tell ChatGPT to be funny, it does a spectacular job of doing the opposite. By default, its jokes are unoriginal, verbose, and tacky. There's a lot you can do with a prompt, but it'd only get you so far. 
+  If you tell ChatGPT to be funny, it does a spectacular job of doing the opposite. By default, its jokes are unoriginal, verbose, and tacky. There's a lot you can do with a prompt, but it'd only get you so far. 
 
-  What worked was pairing Santa with a ruthless editor that would critique his tweets until they met a quality bar. If they didn't, then the tweet would be thrown out. Santa and the editor would at times take 5-10 back and forths until they were satisfied.
+  What worked well was pairing Santa with a ruthless editor that would critique his tweets until they met a quality bar. If they didn't, then the tweet would be thrown out. Santa and the editor would at times take 5-10 back and forths until they were satisfied.
 
   Here's some of the criteria the editor used:
 
@@ -44,9 +44,9 @@ fullDescription: |
     * Economy of Punchline - does the joke land quickly or are we explaining/extending it too much?
     * No obscure references - are there references that are try-hard?
 
-  ![Comic strip](/images/projects/ai-santa/comic.png) 
+  ![Comic strip](/images/projects/ai-santa/comic.png "Come on, Santa.") 
   
-  The resulting tweets are hyper-sensitive to every word in the editor's prompt. That's because Santa and the editor amplified each other with each round of revisions. This ends up being a more [chaotic system](https://www.youtube.com/watch?v=fDek6cYijxI) - where tiny changes to the input could lead to wildly different outputs. That property of the agents was key to getting solid tweets out.
+  The results from these back-and-forths are hyper-sensitive to every word in the editor's prompt. That's because Santa and the editor amplified each other with each round of revisions. This ends up being a [chaotic system](https://www.youtube.com/watch?v=fDek6cYijxI) - where tiny changes to the input could lead to wildly different outputs. I believe those rounds were the secret sauce to semi-decent jokes.
 
   A first draft from Santa would go from this:
 
@@ -62,15 +62,15 @@ fullDescription: |
 
   ## Memecoins = Zero Sum = In-fighting
 
-  In today's memecoin world, every time you make money, somebody else loses money. That wouldn't be the case if there was new money coming into the system.
+  In today's memecoin world, every time you make money, somebody else loses money. That's because there's no new money coming into the system, it's all the same people gambling against each other. 
   
-  You can smell that competitiveness in the crypto culture. People have been scammed, robbed, rug-pulled, lied to, spat on, shat on -- it's called "the trenches" for a reason. Everybody is skeptical of everyone but the rewards are real: life-changing amounts of money.
+  You can smell that competitiveness in the air in crypto culture. People have been scammed, robbed, rug-pulled, lied to, spat on, shat on -- it's called "the trenches" for a reason. Everybody is skeptical of everyone but the rewards are real: life-changing amounts of money.
 
-  Without new value being created, it's a massive gambling arena where nobody wants to be the sucker. I got accused for scamming and rug-pulling, and even though I didn't - I understood the temptation to, because it's so easy. 
+  Without new value being created, it's a massive gambling arena where nobody wants to be the sucker. I got accused for scamming and rug-pulling, and even though I didn't - I understood the temptation to, because it's so easy to do it (which is probably why many people are anonymous). 
   
   The methods I saw for "building trust" were performative and self-sacrificial. The expectation is to publicly sacrifice your chances at making money to prove your fealty to a coin. Even if you did everything right to demonstrate you can't gain from it, chances are you'd still get put on blast. 
 
-  Anyway, I left with a sour taste in my mouth for the crypto community after this, but I did meet some genuine gems in the process and have a hell of a story to tell.
+  Anyway, I left with a sour taste in my mouth for the crypto community after this, but I did meet some genuine gems in the process and have a fun story to tell.
 
   ## Couple more pics
 
