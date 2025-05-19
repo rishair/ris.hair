@@ -3,8 +3,10 @@
 	import { onMount } from 'svelte';
 	import TagPill from '$lib/components/TagPill.svelte';
 
-	export let data: { project: any };
+	export let data: { project: any; prevProject: any; nextProject: any };
 	const project = data.project;
+	const prevProject = data.prevProject;
+	const nextProject = data.nextProject;
 
 	// Function to format date range for projects
 	function formatDateRange(startDate: string, endDate: string | undefined) {
@@ -277,6 +279,28 @@
 			</div>
 		</div>
 	{/if}
+
+	<hr class="my-8" />
+	<div class="flex justify-between">
+		{#if prevProject}
+			<a
+				href="/projects/{prevProject.slug}"
+				class="text-link-color hover:underline"
+				data-sveltekit-preload-data
+			>
+				← {prevProject.title}
+			</a>
+		{/if}
+		{#if nextProject}
+			<a
+				href="/projects/{nextProject.slug}"
+				class="text-link-color hover:underline ml-auto"
+				data-sveltekit-preload-data
+			>
+				{nextProject.title} →
+			</a>
+		{/if}
+	</div>
 </section>
 
 <style>
