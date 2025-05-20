@@ -5,7 +5,7 @@
 	export let borderColor: string = '#fff'; // Default white border
 	export let borderWidth: number = 4; // Default border width
 
-	const sizeClass = size === 'small' ? 'w-6 h-6' : size === 'medium' ? 'w-8 h-8' : 'w-12 h-12';
+	const sizeClass = size === 'small' ? 'w-6 h-6' : size === 'medium' ? 'w-8 h-8' : 'w-10 h-10';
 	const shadowClass =
 		size === 'small' ? 'drop-shadow-sm' : size === 'medium' ? 'drop-shadow-md' : 'drop-shadow-lg';
 </script>

@@ -41,6 +41,10 @@
 	<slot />
 </main>
 
+<footer class="text-center text-sm text-gray-500 py-4">
+	© {new Date().getFullYear()} Rishi Ishairzay
+</footer>
+
 <style>
 	@import '../styles/app.css';
 </style>
