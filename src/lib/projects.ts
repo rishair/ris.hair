@@ -1,5 +1,6 @@
 import { load } from 'js-yaml';
 import { error } from '@sveltejs/kit';
+import { parseDate } from './utils';
 
 // This helper function will read and parse all project YAML files
 export async function getAllProjects() {
@@ -22,8 +23,8 @@ export async function getAllProjects() {
 		if (!b.endDate) {
 			return 1;
 		}
-		const dateA = new Date(a.endDate);
-		const dateB = new Date(b.endDate);
+		const dateA = parseDate(a.endDate);
+		const dateB = parseDate(b.endDate);
 		return dateB.getTime() - dateA.getTime();
 	});
 }

@@ -1,5 +1,6 @@
 import { json } from '@sveltejs/kit'
 import type { Post } from '$lib/types'
+import { parseDate } from '$lib/utils'
 
 async function getPosts() {
 	let posts: Post[] = []
@@ -17,8 +18,10 @@ async function getPosts() {
 		}
 	}
 
-	posts = posts.sort((first, second) =>
-    new Date(second.date).getTime() - new Date(first.date).getTime())
+        posts = posts.sort(
+                (first, second) =>
+                        parseDate(second.date).getTime() - parseDate(first.date).getTime()
+        )
 
 	return posts
 }

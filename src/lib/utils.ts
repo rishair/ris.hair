@@ -1,12 +1,58 @@
 import { marked } from 'marked';
 
+const MONTHS = [
+        'january',
+        'february',
+        'march',
+        'april',
+        'may',
+        'june',
+        'july',
+        'august',
+        'september',
+        'october',
+        'november',
+        'december'
+];
+
+export function parseDate(date: string): Date {
+        if (!date) return new Date(NaN);
+
+        let cleaned = date.trim();
+        cleaned = cleaned.replaceAll('-', '/');
+
+        const ymdMatch = cleaned.match(/^(\d{4})[/-](\d{1,2})(?:[/-](\d{1,2}))?$/);
+        if (ymdMatch) {
+                const year = parseInt(ymdMatch[1], 10);
+                const month = parseInt(ymdMatch[2], 10) - 1;
+                const day = ymdMatch[3] ? parseInt(ymdMatch[3], 10) : 1;
+                return new Date(year, month, day);
+        }
+
+        const monthYearMatch = cleaned.match(/^([a-zA-Z]+)\s+(\d{4})$/);
+        if (monthYearMatch) {
+                const monthName = monthYearMatch[1].toLowerCase();
+                const monthIndex = MONTHS.indexOf(monthName);
+                const year = parseInt(monthYearMatch[2], 10);
+                if (monthIndex !== -1) {
+                        return new Date(year, monthIndex, 1);
+                }
+        }
+
+        const parsed = Date.parse(cleaned);
+        if (!isNaN(parsed)) {
+                return new Date(parsed);
+        }
+
+        return new Date(cleaned);
+}
+
 type DateStyle = Intl.DateTimeFormatOptions['dateStyle']
 
 export function formatDate(date: string, dateStyle: DateStyle = 'medium', locales = 'en') {
-	// Safari is mad about dashes in the date
-	const dateToFormat = new Date(date.replaceAll('-', '/'))
-	const dateFormatter = new Intl.DateTimeFormat(locales, { dateStyle })
-	return dateFormatter.format(dateToFormat)
+        const dateToFormat = parseDate(date)
+        const dateFormatter = new Intl.DateTimeFormat(locales, { dateStyle })
+        return dateFormatter.format(dateToFormat)
 }
 
 /**
