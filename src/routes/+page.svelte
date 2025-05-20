@@ -5,6 +5,7 @@
 	import TagPill from '$lib/components/TagPill.svelte';
 	import HeartSticker from '$lib/components/HeartSticker.svelte';
 	import { formatDate } from '$lib/utils';
+	import ScrollHint from '$lib/components/ScrollHint.svelte';
 
 	function withoutFavorite(tags: string[] = []) {
 		return tags.filter((t) => t !== 'favorite');
@@ -183,6 +184,8 @@
 		</a>
 	</div>
 </section>
+
+<ScrollHint />
 
 <!-- Side Quests Section -->
 <section id="side-quests" class="text-default px-6 mb-32 pt-16">
