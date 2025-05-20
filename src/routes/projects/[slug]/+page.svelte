@@ -112,6 +112,27 @@
 		}
 	}
 
+	// Play/pause markdown videos when they enter or leave the viewport
+	let videoObserver: IntersectionObserver;
+	function initVideoObserver(): void {
+		const videos = document.querySelectorAll<HTMLVideoElement>('.markdown-video');
+		if (videoObserver) videoObserver.disconnect();
+		videoObserver = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					const video = entry.target as HTMLVideoElement;
+					if (entry.isIntersecting) {
+						video.play().catch(() => {});
+					} else {
+						video.pause();
+					}
+				}
+			},
+			{ threshold: 0.25 }
+		);
+		videos.forEach((v) => videoObserver.observe(v));
+	}
+
 	// After the component is mounted, set up click handlers for markdown images
 	onMount(() => {
 		// Create the combined gallery
@@ -146,6 +167,8 @@
 				);
 			});
 		});
+
+		initVideoObserver();
 	});
 
 	// Update gallery when project changes
@@ -182,6 +205,8 @@
 					);
 				});
 			});
+
+			initVideoObserver();
 		}, 0);
 	}
 </script>
