@@ -60,9 +60,17 @@ h3 em,
 .section-title em,
 .name em {
     @apply bg-link-color;
-    @apply bg-forest-green;
+    clip-path: polygon(1% 0, 100% 0, 99% 109%, 0 100%);
     color: #fff;
     font-style: normal;
+}
+
+h1 em.green,
+h2 em.green,
+h3 em.green,
+.section-title em.green,
+.name em.green {
+    @apply bg-forest-green;
 }
 
 /* Default styling for em elements */
@@ -76,7 +84,7 @@ strong {
 }
 
 h1 em {
-    /* padding: 8px 14px; */
+    padding: 8px 14px;
 }
 
 h1 {

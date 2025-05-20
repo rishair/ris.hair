@@ -110,7 +110,7 @@
 <!-- Introduction Section -->
 <section id="intro" class="text-default px-6 mb-32">
 	<h1 class="name mb-16 inline-block">
-		Hey there, I'm <em class="shadow px-2 py-1">Rishi Ishairzay</em>
+		Hey there, I'm <em class="shadow px-2 py-1 green">Rishi Ishairzay</em>
 	</h1>
 	<h2>
 		I'm an independent <strong>AI product engineer</strong> in Brooklyn, NY.
@@ -150,7 +150,7 @@
 			rel="noopener noreferrer"
 			aria-label="Twitter"
 		>
-			<svg class="w-6 h-6 hover:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+			<svg class="w-6 h-6 hover:text-blue-400" fill="#006b56" viewBox="0 0 24 24">
 				<path
 					d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
 				/>
@@ -163,7 +163,7 @@
 			rel="noopener noreferrer"
 			aria-label="Substack"
 		>
-			<svg class="w-6 h-6 hover:text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+			<svg class="w-6 h-6 hover:text-orange-500" fill="#006b56" viewBox="0 0 24 24">
 				<path
 					d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"
 				/>
@@ -176,7 +176,7 @@
 			rel="noopener noreferrer"
 			aria-label="LinkedIn"
 		>
-			<svg class="w-6 h-6 hover:text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+			<svg class="w-6 h-6 hover:text-blue-600" fill="#006b56" viewBox="0 0 24 24">
 				<path
 					d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
 				/>
@@ -190,7 +190,7 @@
 <!-- Side Quests Section -->
 <section id="side-quests" class="text-default px-6 mb-32 pt-16">
 	<h2 class="section-title inline-block">
-		<em class="shadow px-2 py-1">Side Quests</em>
+		<em class="shadow px-2 py-1 green">Side Quests</em>
 	</h2>
 
 	<div class="section-content">
@@ -223,7 +223,7 @@
 						/>
 						<div class="p-4">
 							<h3 class="text-xl font-bold mb-2">{project.title}</h3>
-							<p class="text-gray-600 mb-2">{project.description}</p>
+							<p class="text-gray-600 text-base mb-3">{project.description}</p>
 
 							<!-- Display tags -->
 							<div class="mb-2">
@@ -248,7 +248,7 @@
 <!-- Writings Section -->
 <section id="writings" class="text-default px-6 mb-32 pt-16">
 	<h2 class="section-title inline-block">
-		<em class="shadow px-2 py-1">Writings</em>
+		<em class="shadow px-2 py-1 green">Writings</em>
 	</h2>
 
 	<div class="section-content">
@@ -257,8 +257,16 @@
 				<li>
 					<a
 						href={'/posts/' + post.slug}
-						class="block border border-gray-200 rounded-lg p-4 hover:border-gray-300 hover:shadow-md transition-all duration-200 bg-white/50 shadow-sm"
+						class="block border border-gray-200 rounded-lg p-4 hover:border-gray-300 hover:shadow-md transition-all duration-200 bg-white/50 shadow-sm relative"
 					>
+						{#if post.tags && post.tags.includes('favorite')}
+							<HeartSticker
+								rotation={20}
+								position="sticker-top-right"
+								size="medium"
+								borderWidth={3}
+							/>
+						{/if}
 						<div class="flex justify-between items-baseline">
 							<h3 class="text-xlg font-medium">{post.title}</h3>
 							<span class="text-sm text-gray-500">{formatDate(post.date)}</span>
