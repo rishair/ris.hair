@@ -60,7 +60,7 @@
 
 	footer {
 		color: #fff;
-		background: #c1655c;
+		background: linear-gradient(to bottom, #c1655c, #cb685f);
 	}
 
 	.email-link {
@@ -88,10 +88,6 @@
 
 	.email-link:hover::after {
 		height: 1px;
-	}
-
-	.footer {
-		background: #c1655c;
 	}
 
 	.wave-top {
