@@ -117,7 +117,7 @@
 	</h2>
 
 	<p>
-		Nowadays I'm building a hyper-local event discovery platform at <a href="https://juice.com"
+		Nowadays I'm building a hyper-local event discovery platform at <a href="/projects/juice"
 			>Juice</a
 		>. See my previous exploits <a href="#side-quests">below</a>.
 	</p>

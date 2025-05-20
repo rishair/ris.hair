@@ -1,5 +1,5 @@
 title: Juice
-description: AI-powered event discovery platform
+description: Hear about events *before* they happen. AI-powered event aggregator to stay informed with your venues & interests.
 link: https://gotjuice.app
 image: /images/projects/juice/screen3.png
 startDate: April 2025
@@ -9,7 +9,7 @@ tags:
   - prototype
   - local events
 atAGlance:
-  - Get notified of events that fall into your interests
+  - Get notified of events in your interests
   - Uses AI to build scrapers and keep realtime information of events at venues
   - iOS & web app 
 fullDescription: |
