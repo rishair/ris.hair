@@ -110,7 +110,7 @@
 <!-- Introduction Section -->
 <section id="intro" class="text-default px-6 mb-32">
 	<h1 class="name mb-16 inline-block">
-		Hey there, I'm <em class="shadow px-2 py-1 green">Rishi Ishairzay</em>
+		Hey there, I'm <em class="shadow px-2 py-1">Rishi Ishairzay</em>
 	</h1>
 	<h2>
 		I'm an independent <strong>AI product engineer</strong> in Brooklyn, NY.
@@ -190,7 +190,7 @@
 <!-- Side Quests Section -->
 <section id="side-quests" class="text-default px-6 mb-32 pt-16">
 	<h2 class="section-title inline-block">
-		<em class="shadow px-2 py-1 green">Side Quests</em>
+		<em class="shadow px-2 py-1">Side Quests</em>
 	</h2>
 
 	<div class="section-content">
@@ -248,7 +248,7 @@
 <!-- Writings Section -->
 <section id="writings" class="text-default px-6 mb-32 pt-16">
 	<h2 class="section-title inline-block">
-		<em class="shadow px-2 py-1 green">Writings</em>
+		<em class="shadow px-2 py-1">Writings</em>
 	</h2>
 
 	<div class="section-content">

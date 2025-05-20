@@ -60,17 +60,10 @@ h3 em,
 .section-title em,
 .name em {
     @apply bg-link-color;
+    @apply bg-forest-green;
     clip-path: polygon(1% 0, 100% 0, 99% 109%, 0 100%);
     color: #fff;
     font-style: normal;
-}
-
-h1 em.green,
-h2 em.green,
-h3 em.green,
-.section-title em.green,
-.name em.green {
-    @apply bg-forest-green;
 }
 
 /* Default styling for em elements */
@@ -239,7 +232,7 @@ button {
     border-left: 4px solid #E37769cc;
     padding-left: 1.8rem;
     padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
     background-color: rgba(227, 119, 105, 0.05);

@@ -11,11 +11,10 @@ tags:
   - journaling
 atAGlance:
   - Clustered 200+ journal entries into 10 philosophical themes
-  - Generated poetry based analyses of the clusters
+  - Generated a poem from the results
   - Musings on how to get soulful responses from AI
 fullDescription: |
-  In 2024, I had a near-daily habit of writing [morning pages](https://www.theguardian.com/lifeandstyle/2014/oct/03/morning-pages-change-your-life-oliver-burkeman). I wrote a total of 200+ entries through the year and I wanted to make sense of the themes that kept swirling around. 
-
+  In 2024, I had a near-daily habit of writing [morning pages](https://www.theguardian.com/lifeandstyle/2014/oct/03/morning-pages-change-your-life-oliver-burkeman). I wrote a total of 212 entries totaling to 98K words. For that amount of content, I was sure I could find some interesting themes in there.
 
   I wanted to abstract the entries into a higher-dimensionsal space so they could easily be clustered. But, what should they be grouped by? Mood, emotion, the topic being discussed? 
 
@@ -40,15 +39,15 @@ fullDescription: |
 
   For each cluster, I took all the questions & implied answers and sent them back to the AI. This time I asked **what is the broad piercing question that ties all these questions together?**
 
-  What I got back was a set of ~10 or so questions that I kept circling around through the year. A particularly striking one was:
+  What I got back was a set of ~10 or so questions that I kept circling around through the year. A particularly resonant one was:
 
-  >! Why do I long for deep connections, yet feel so afraid of being truly seen?
+  >! How do I honor both my own needs and my responsibilities to others without losing myself?
 
-  I was a shook by how specific and relevant the questions were. 2024 was a particularly tough year, and this distilled it down rather ruthlessly. It was both relieving and excruciating to read - on one hand I felt deeply seen and on the other I was indignant because the whole story wasn't captured in these journals.
+  I was a shook by how specific and relevant the questions were. 2024 was a particularly tough year, and this distilled it all down. It was both relieving and painful to read - on one hand I felt seen and on the other I was indignant because the whole story wasn't captured in these journals. I wanted it to know more.
 
-  Let's keep going. I asked it to give me a summary of my answers, and a set of recommendations from a therapist/coach for each big question I'm pondering. Then outline what a day of my life looks like today VS after I take the recommendations. 
+  I then asked it to give me a summary of my answers to the questions, and a set of recommendations from a therapist/coach for each big question I'm pondering. From there, outline what a day of my life looks like today VS after I take the recommendations. 
 
-  After doing this for all 10 questions, I handed the full analyses to Claude one more time and asked it to create a poem in the style of Khalil Gibran. A poem that I could read every morning. It responded with this beauty -
+  After doing this for all 10 questions, I handed the full analyses to Claude again and asked it to create a poem in the style of Khalil Gibran. A poem that I could read every morning. It responded with this beauty -
 
 
   >! ## Morning Invocation
@@ -63,6 +62,6 @@ fullDescription: |
   
   LLMs are just predictive algorithms. They use your prompt to launch into a probability space with the average of everything that has ever been said. If you give it average input, then it will provide average output.
 
-  However, if you give it deeply human inputs, then it'll narrow it's probability space and provide you with deeply human outputs. It's similar to how humans work - if you open up to another person, then they're more likely to open up back to you.
+  However, if you give it deeply human inputs, then it'll narrow it's probability space and provide you with deeply human outputs. Perhaps similarly to how humans work - if you open up to another person, then they're more likely to open up to you.
 
-  Maybe that's how we can relate with AI as a whole. Instead of becoming superhuman, it can uncover the undertones of our own lives that make us richly human. Like this poem - it's a reflection of my own thoughts, except amplified with the wisdom of others. Maybe *that's* what it means to be superhuman. 
+  Maybe that's how we can relate with AI as a whole. Instead of relying on it to become superhuman, we can rely on it to reflect back our own humanity. This poem is a reflection of my own thoughts, except amplified with the wisdom of others. Maybe *that's* what it means to be superhuman.
