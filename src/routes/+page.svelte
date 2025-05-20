@@ -195,11 +195,11 @@
 <!-- Side Quests Section -->
 <section id="side-quests" class="text-default px-6 mb-32 pt-16">
 	<h2 class="section-title inline-block">
-		<em class="shadow px-2 py-1">Side Quests</em>
+		<em class="shadow px-2 py-1">Projects</em>
 	</h2>
 
 	<div class="section-content">
-		<p class="mb-8">Since leaving Twitter, I've been exploring new ideas and projects.</p>
+		<p class="mb-8">Collection of personal projects, ranging from prototypes to live products.</p>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			{#each data.projects as project, i}

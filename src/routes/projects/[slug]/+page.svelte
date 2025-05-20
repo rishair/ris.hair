@@ -333,12 +333,11 @@
 
 	<hr class="my-8" />
 
-	<hr class="my-8" />
 	<div class="flex justify-between">
 		{#if prevProject}
 			<a
 				href="/projects/{prevProject.slug}"
-				class="text-link-color hover:underline"
+				class="text-link-color hover-rotate--3"
 				data-sveltekit-preload-data
 			>
 				← {prevProject.title}
@@ -347,7 +346,7 @@
 		{#if nextProject}
 			<a
 				href="/projects/{nextProject.slug}"
-				class="text-link-color hover:underline ml-auto"
+				class="text-link-color hover-rotate-3"
 				data-sveltekit-preload-data
 			>
 				{nextProject.title} →

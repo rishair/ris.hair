@@ -137,20 +137,37 @@ a:hover::after {
 }
 
 /* Rotation classes */
-a.rotate-1:hover {
+a.hover-rotate-1:hover {
     transform: rotate(1deg);
 }
 
-a.rotate-3:hover {
+a.hover-rotate-3:hover {
     transform: rotate(3deg);
 }
 
-a.rotate-4:hover {
+a.hover-rotate-4:hover {
     transform: rotate(4deg);
 }
 
-a.rotate-5:hover {
+a.hover-rotate-5:hover {
     transform: rotate(5deg);
+}
+
+/* Negative rotation classes */
+a.hover-rotate--1:hover {
+    transform: rotate(-1deg);
+}
+
+a.hover-rotate--3:hover {
+    transform: rotate(-3deg);
+}
+
+a.hover-rotate--4:hover {
+    transform: rotate(-4deg);
+}
+
+a.hover-rotate--5:hover {
+    transform: rotate(-5deg);
 }
 
 /* Opt-out classes */
