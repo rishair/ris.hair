@@ -97,7 +97,7 @@ export function processMarkdown(content: string): string {
 				}
 				return `<p>${marked.parseInline(line)}</p>`;
 			}).join('');
-			return `<blockquote${isNoItalic ? ' class="no-italic"' : ''}>${wrapped}</blockquote>`;
+			return `<blockquote class="mx-0 md:mx-4 ${isNoItalic ? 'no-italic' : ''}">${wrapped}</blockquote>`;
 		}
 	);
 

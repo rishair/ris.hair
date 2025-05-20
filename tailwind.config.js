@@ -18,13 +18,14 @@ export default {
       },
       fontFamily: {
         'work-sans': ['"Work Sans"', 'sans-serif'],
-        'source-serif': ['"Source Serif 4"', 'serif']
+        'source-serif': ['"Source Serif 4"', 'serif'],
+        'serif': ['-apple-system-ui-serif', 'ui-serif', '"Spectral"', '"Georgia"', 'serif']
       }
     },
   },
 
   plugins: [
-    function({ addBase, config }) {
+    function ({ addBase, config }) {
       addBase({
         '::selection': { background: config('theme.colors.highlight') },
         '::-moz-selection': { background: config('theme.colors.highlight') },

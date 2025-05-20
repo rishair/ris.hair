@@ -37,7 +37,7 @@
 	</ul>
 </nav>
 
-<main class="container mx-auto max-w-3xl py-20 bg-page-background">
+<main class="container mx-auto max-w-3xl py-4 md:py-20 bg-page-background">
 	<slot />
 </main>
 

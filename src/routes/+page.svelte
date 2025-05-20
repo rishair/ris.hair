@@ -271,185 +271,6 @@
 	</div>
 </section>
 
-<!-- Learning Journey Section -->
-<!-- <section id="learning-journey" class="text-default px-6 mb-32 pt-16">
-	<h2 class="section-title mb-16 inline-block">
-		<em class="shadow px-2 py-1">Learning Journey</em>
-	</h2>
-
-	<div class="section-content">
-		<p class="mb-8">
-			I believe in continuous learning and growth. Here are some of the transformative learning
-			experiences that have shaped my perspective and skills.
-		</p>
-
-		<div class="space-y-4">
-			<a
-				href="https://productintuition.com"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="block hover:bg-gray-50 transition-colors"
-			>
-				<div
-					class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-b border-gray-100 pb-4"
-				>
-					<div class="flex-1">
-						<h3 class="text-lg font-bold">Product Intuition Course</h3>
-						<p class="text-gray-600 text-sm">
-							A deep dive into product thinking, user psychology, and building products that people
-							love.
-						</p>
-					</div>
-					<div class="text-sm text-gray-500 md:text-right whitespace-nowrap">2023</div>
-				</div>
-			</a>
-
-			<a
-				href="https://www.deeplearning.ai"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="block hover:bg-gray-50 transition-colors"
-			>
-				<div
-					class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-b border-gray-100 pb-4"
-				>
-					<div class="flex-1">
-						<h3 class="text-lg font-bold">AI & Machine Learning Course</h3>
-						<p class="text-gray-600 text-sm">
-							Comprehensive study of modern AI systems, focusing on practical applications and
-							ethical considerations.
-						</p>
-					</div>
-					<div class="text-sm text-gray-500 md:text-right whitespace-nowrap">2023</div>
-				</div>
-			</a>
-
-			<a
-				href="https://artofaccomplishment.com"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="block hover:bg-gray-50 transition-colors"
-			>
-				<div
-					class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-b border-gray-100 pb-4"
-				>
-					<div class="flex-1">
-						<h3 class="text-lg font-bold">Art of Accomplishment (AoA)</h3>
-						<p class="text-gray-600 text-sm">
-							A transformative program focused on personal growth, leadership, and creating
-							meaningful impact.
-						</p>
-					</div>
-					<div class="text-sm text-gray-500 md:text-right whitespace-nowrap">2022</div>
-				</div>
-			</a>
-
-			<a
-				href="https://www.ucbtheatre.com"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="block hover:bg-gray-50 transition-colors"
-			>
-				<div
-					class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-b border-gray-100 pb-4"
-				>
-					<div class="flex-1">
-						<h3 class="text-lg font-bold">Improv Comedy Classes</h3>
-						<p class="text-gray-600 text-sm">
-							Studied improvisational comedy to enhance creativity, spontaneity, and collaborative
-							skills.
-						</p>
-					</div>
-					<div class="text-sm text-gray-500 md:text-right whitespace-nowrap">2022</div>
-				</div>
-			</a>
-
-			<a
-				href="https://www.masterclass.com"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="block hover:bg-gray-50 transition-colors"
-			>
-				<div
-					class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-b border-gray-100 pb-4"
-				>
-					<div class="flex-1">
-						<h3 class="text-lg font-bold">Writing & Storytelling Courses</h3>
-						<p class="text-gray-600 text-sm">
-							Developed skills in narrative structure, creative writing, and effective
-							communication.
-						</p>
-					</div>
-					<div class="text-sm text-gray-500 md:text-right whitespace-nowrap">2021</div>
-				</div>
-			</a>
-
-			<a
-				href="https://www.nols.edu"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="block hover:bg-gray-50 transition-colors"
-			>
-				<div
-					class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-b border-gray-100 pb-4"
-				>
-					<div class="flex-1">
-						<h3 class="text-lg font-bold">Nature Survival & Wilderness Course</h3>
-						<p class="text-gray-600 text-sm">
-							Learned essential survival skills, wilderness navigation, and deepened connection with
-							nature.
-						</p>
-					</div>
-					<div class="text-sm text-gray-500 md:text-right whitespace-nowrap">2021</div>
-				</div>
-			</a>
-		</div>
-	</div>
-</section> -->
-
-<!-- Things that have Shaped me Section -->
-<!-- <section id="shaped-me" class="text-default px-6 mb-32 pt-16">
-	<h2 class="section-title mb-16 inline-block">
-		<em class="shadow px-2 py-1">Things that have Shaped me</em>
-	</h2>
-
-	<div class="section-content">
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-			<div>
-				<h3 class="text-xl font-bold mb-4">Books & Ideas</h3>
-				<ul class="important-list space-y-3">
-					<li>The Righteous Mind by Jonathan Haidt</li>
-					<li>Thinking in Systems by Donella Meadows</li>
-					<li>Gödel, Escher, Bach by Douglas Hofstadter</li>
-					<li>The Elephant in the Brain by Kevin Simler & Robin Hanson</li>
-					<li>Impro by Keith Johnstone</li>
-				</ul>
-			</div>
-
-			<div>
-				<h3 class="text-xl font-bold mb-4">Experiences</h3>
-				<ul class="important-list space-y-3">
-					<li>Building products from scratch</li>
-					<li>Living in different cities</li>
-					<li>Improv comedy classes</li>
-					<li>Long bike rides through nature</li>
-					<li>Deep conversations with friends</li>
-				</ul>
-			</div>
-		</div>
-
-		<div class="mt-12">
-			<h3 class="text-xl font-bold mb-4">Philosophies</h3>
-			<p>
-				I believe in building things that matter, prioritizing relationships over achievements, and
-				maintaining a healthy sense of curiosity about the world. I try to approach life with a
-				balance of ambition and contentment, always seeking to learn and grow while appreciating
-				what I already have.
-			</p>
-		</div>
-	</div>
-</section> -->
-
 <style>
 	h1 {
 		width: 100%;
@@ -497,5 +318,14 @@
 
 	.project-card:hover > div {
 		transform: rotate(2deg);
+	}
+
+	/* Writing hover effect */
+	#writings li a {
+		transition: transform 0.2s ease;
+	}
+
+	#writings li a:hover {
+		transform: rotate(0.5deg);
 	}
 </style>
