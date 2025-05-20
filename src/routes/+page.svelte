@@ -260,10 +260,10 @@
 						class="block border border-gray-200 rounded-lg p-4 hover:border-gray-300 hover:shadow-md transition-all duration-200 bg-white/50 shadow-sm"
 					>
 						<div class="flex justify-between items-baseline">
-							<h3 class="text-lg font-medium">{post.title}</h3>
+							<h3 class="text-xlg font-medium">{post.title}</h3>
 							<span class="text-sm text-gray-500">{formatDate(post.date)}</span>
 						</div>
-						<p class="text-gray-600 text-sm mt-1 mb-1">{post.description}</p>
+						<p class="text-gray-600 text-base mt-1 mb-1">{post.description}</p>
 					</a>
 				</li>
 			{/each}
