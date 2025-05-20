@@ -4,6 +4,7 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import TagPill from '$lib/components/TagPill.svelte';
 	import HeartSticker from '$lib/components/HeartSticker.svelte';
+	import { formatDate } from '$lib/utils';
 
 	function withoutFavorite(tags: string[] = []) {
 		return tags.filter((t) => t !== 'favorite');
@@ -238,6 +239,31 @@
 				</a>
 			{/each}
 		</div>
+	</div>
+</section>
+
+<!-- Writings Section -->
+<section id="writings" class="text-default px-6 mb-32 pt-16">
+	<h2 class="section-title inline-block">
+		<em class="shadow px-2 py-1">Writings</em>
+	</h2>
+
+	<div class="section-content">
+		<ul class="space-y-3">
+			{#each data.posts as post}
+				<li
+					class="border border-gray-200 rounded-lg p-4 hover:border-gray-300 hover:shadow-md transition-all duration-200 bg-white/50 shadow-sm"
+				>
+					<div class="flex justify-between items-baseline">
+						<a href={'/posts/' + post.slug} class="text-lg font-bold hover:underline">
+							{post.title}
+						</a>
+						<span class="text-sm text-gray-500">{formatDate(post.date)}</span>
+					</div>
+					<p class="text-gray-600 text-sm mt-1 mb-1">{post.description}</p>
+				</li>
+			{/each}
+		</ul>
 	</div>
 </section>
 

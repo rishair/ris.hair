@@ -4,7 +4,9 @@ import { getAllProjects } from '$lib/projects';
 // it so that it gets served as a static asset in production
 export const prerender = true;
 
-export async function load() {
+export async function load({ fetch }) {
 	const projects = await getAllProjects();
-	return { projects };
+	const response = await fetch('api/posts');
+	const posts = await response.json();
+	return { projects, posts };
 }
