@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { processMarkdown } from '$lib/utils';
 	import { onMount } from 'svelte';
-	import TagPill from '$lib/components/TagPill.svelte';
-	import HeartSticker from '$lib/components/HeartSticker.svelte';
+	import DocumentHeader from '$lib/components/DocumentHeader.svelte';
 	import { fade, fly } from 'svelte/transition';
 
 	export let data: { project: any; prevProject: any; nextProject: any };
@@ -12,9 +11,6 @@
 	$: prevProject = data.prevProject;
 	$: nextProject = data.nextProject;
 	$: processedDescription = processMarkdown(project.fullDescription);
-	$: tagsNoFavorite = project?.tags
-		? (project.tags as string[]).filter((t) => t !== 'favorite')
-		: [];
 	$: atAGlanceHtml = processMarkdown(project.atAGlance.map((p: string) => `-> ${p}`).join('\n'));
 
 	// Function to format date range for projects
@@ -217,26 +213,12 @@
 </svelte:head>
 
 <section class="text-default px-6">
-	<h1 class="name mb-2 relative">
-		<em class="shadow px-2 py-1">{project.title}</em>
-		{#if project.tags && project.tags.includes('favorite')}
-			<HeartSticker />
-		{/if}
-	</h1>
-
-	<!-- Display date -->
-	<p class="my-2">
-		{formatDateRange(project.startDate, project.endDate)}
-	</p>
-
-	<!-- Display tags -->
-	<div class="mb-6">
-		{#if tagsNoFavorite.length > 0}
-			{#each tagsNoFavorite as tag}
-				<TagPill {tag} variant="green" />
-			{/each}
-		{/if}
-	</div>
+	<DocumentHeader
+		title={project.title}
+		date={formatDateRange(project.startDate, project.endDate)}
+		tags={project.tags}
+		tagVariant="green"
+	/>
 
 	<div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mt-12">
 		<div class="lg:col-span-3">

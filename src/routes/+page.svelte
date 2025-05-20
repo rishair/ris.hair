@@ -327,6 +327,24 @@
 		transform: rotate(2deg);
 	}
 
+	/* Animated bottom border for project cards */
+	.project-card > div::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 2px;
+		width: 0;
+		background-color: #006b56;
+		border-bottom-left-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
+		transition: width 0.2s ease;
+	}
+
+	.project-card:hover > div::after {
+		width: 100%;
+	}
+
 	/* Writing hover effect */
 	#writings li a {
 		transition: transform 0.2s ease;
@@ -334,5 +352,23 @@
 
 	#writings li a:hover {
 		transform: rotate(0.5deg);
+	}
+
+	/* Animated bottom border for writings */
+	#writings li a::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 2px;
+		width: 0;
+		background-color: #006b56;
+		border-bottom-left-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
+		transition: width 0.2s ease;
+	}
+
+	#writings li a:hover::after {
+		width: 100%;
 	}
 </style>

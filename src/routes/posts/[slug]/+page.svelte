@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { processMarkdown, formatDate } from '$lib/utils';
-	import TagPill from '$lib/components/TagPill.svelte';
+	import DocumentHeader from '$lib/components/DocumentHeader.svelte';
 	export let data: { post: import('$lib/types').Post };
 	$: post = data.post;
 	$: contentHtml = processMarkdown(post.body);
@@ -12,15 +12,12 @@
 </svelte:head>
 
 <section class="text-default px-6">
-	<h1 class="name mb-2"><em class="shadow px-2 py-1">{post.title}</em></h1>
-	<p class="my-2">{formatDate(post.date)}</p>
-	{#if post.tags?.length}
-		<div class="mb-6">
-			{#each post.tags as tag}
-				<TagPill {tag} variant="green" />
-			{/each}
-		</div>
-	{/if}
+	<DocumentHeader
+		title={post.title}
+		date={formatDate(post.date)}
+		tags={post.tags}
+		tagVariant="green"
+	/>
 	{#if post.image}
 		<figure class="mb-6 md:mb-10">
 			<img src={post.image} alt={post.title} class="w-full rounded-lg shadow" />
