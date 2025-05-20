@@ -137,6 +137,11 @@
 	<p>
 		I build beautiful products that help people understand themselves, connect with others, explore
 		their curiosity, and have fun along the way. In other words, the products I wish existed.
+		Personal favorites are marked with a <HeartSticker
+			rotation={20}
+			position="inline"
+			size="small"
+		/>.
 	</p>
 
 	<p>
@@ -194,13 +199,7 @@
 	</h2>
 
 	<div class="section-content">
-		<p class="mb-8">
-			Since leaving Twitter, I've been exploring new ideas and projects. Personal favorites have a <HeartSticker
-				rotation={20}
-				position="inline"
-				size="small"
-			/>.
-		</p>
+		<p class="mb-8">Since leaving Twitter, I've been exploring new ideas and projects.</p>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			{#each data.projects as project, i}
