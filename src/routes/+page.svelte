@@ -256,21 +256,23 @@
 				<li>
 					<a
 						href={'/posts/' + post.slug}
-						class="no-underline block border border-gray-200 rounded-lg p-4 hover:border-gray-300 hover:shadow-md transition-all duration-200 bg-white/50 shadow-sm relative"
+						class="no-underline block border border-gray-200 rounded-lg hover:border-gray-300 hover:shadow-md transition-all duration-200 bg-white/50 shadow-sm relative"
 					>
-						{#if post.tags && post.tags.includes('favorite')}
-							<HeartSticker
-								rotation={20}
-								position="sticker-top-right"
-								size="medium"
-								borderWidth={3}
-							/>
-						{/if}
-						<div class="flex justify-between items-baseline">
-							<h3 class="text-xlg font-medium">{post.title}</h3>
-							<span class="text-sm text-gray-500">{formatDate(post.date)}</span>
+						<div class="p-4">
+							{#if post.tags && post.tags.includes('favorite')}
+								<HeartSticker
+									rotation={20}
+									position="sticker-top-right"
+									size="medium"
+									borderWidth={3}
+								/>
+							{/if}
+							<div class="flex justify-between items-baseline">
+								<h3 class="text-xlg font-medium">{post.title}</h3>
+								<span class="text-sm text-gray-500">{formatDate(post.date)}</span>
+							</div>
+							<p class="text-gray-600 text-base mt-1 mb-1">{post.description}</p>
 						</div>
-						<p class="text-gray-600 text-base mt-1 mb-1">{post.description}</p>
 					</a>
 				</li>
 			{/each}
@@ -332,18 +334,20 @@
 		content: '';
 		position: absolute;
 		left: 0;
+		right: 0;
 		bottom: 0;
-		height: 2px;
-		width: 0;
-		background-color: #006b56;
+		height: 3px;
+		background-color: theme('colors.orange');
 		border-bottom-left-radius: 0.5rem;
 		border-bottom-right-radius: 0.5rem;
-		transition: width 0.2s ease;
+		transform: scaleY(0);
+		transform-origin: bottom;
+		transition: transform 0.2s ease;
 	}
-
+	/* 
 	.project-card:hover > div::after {
-		width: 100%;
-	}
+		transform: scaleY(1);
+	} */
 
 	/* Writing hover effect */
 	#writings li a {
@@ -359,16 +363,18 @@
 		content: '';
 		position: absolute;
 		left: 0;
+		right: 0;
 		bottom: 0;
-		height: 2px;
-		width: 0;
+		height: 3px;
 		background-color: #006b56;
 		border-bottom-left-radius: 0.5rem;
 		border-bottom-right-radius: 0.5rem;
-		transition: width 0.2s ease;
+		transform: scaleY(0);
+		transform-origin: bottom;
+		transition: transform 0.2s ease;
 	}
 
 	#writings li a:hover::after {
-		width: 100%;
+		transform: scaleY(1);
 	}
 </style>
