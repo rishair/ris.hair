@@ -41,10 +41,72 @@
 	<slot />
 </main>
 
-<footer class="text-center text-sm text-gray-500 py-4">
-	© {new Date().getFullYear()} Rishi Ishairzay
+<div class="wave-top"></div>
+
+<footer class="text-center text-base relative pb-8 pt-14">
+	<p class="mb-2">
+		Thanks for reading. Seriously. Also, <a
+			href={`mailto:hello@ris.hair`}
+			class="text-orange-50 email-link">say hi!</a
+		>
+	</p>
+	<p class="text-white/50 text-sm">
+		© {new Date().getFullYear()} Rishi Ishairzay ✌️
+	</p>
 </footer>
 
 <style>
 	@import '../styles/app.css';
+
+	footer {
+		color: #fff;
+		background: #c1655c;
+	}
+
+	.email-link {
+		position: relative;
+		text-decoration: none;
+		display: inline-block;
+		@apply text-white;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.email-link::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 3px;
+		bottom: -2px;
+		left: 0;
+		@apply bg-forest-green;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.email-link:hover {
+		transform: rotate(2deg);
+	}
+
+	.email-link:hover::after {
+		height: 1px;
+	}
+
+	.footer {
+		background: #c1655c;
+	}
+
+	.wave-top {
+		width: 100%;
+		height: 48px;
+		margin-bottom: -5px;
+		background: none;
+	}
+	.wave-top::before {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 48px;
+		background: url("data:image/svg+xml,%3Csvg width='100%' height='48' viewBox='0 0 1200 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 24 Q 75 0 150 24 T 300 24 T 450 24 T 600 24 T 750 24 T 900 24 T 1050 24 T 1200 24 V48 H0 V24Z' fill='%23C1655C'/%3E%3C/svg%3E");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
 </style>

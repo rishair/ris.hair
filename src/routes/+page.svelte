@@ -203,7 +203,7 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			{#each data.projects as project, i}
-				<a href={'/projects/' + project.slug} class="group block project-card">
+				<a href={'/projects/' + project.slug} class="no-underline group block project-card">
 					<div
 						class="shadow rounded-lg overflow-visible transition-all duration-200 bg-white/40 border-8 border-white/40 relative"
 					>
@@ -256,7 +256,7 @@
 				<li>
 					<a
 						href={'/posts/' + post.slug}
-						class="block border border-gray-200 rounded-lg p-4 hover:border-gray-300 hover:shadow-md transition-all duration-200 bg-white/50 shadow-sm relative"
+						class="no-underline block border border-gray-200 rounded-lg p-4 hover:border-gray-300 hover:shadow-md transition-all duration-200 bg-white/50 shadow-sm relative"
 					>
 						{#if post.tags && post.tags.includes('favorite')}
 							<HeartSticker

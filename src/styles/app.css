@@ -109,6 +109,70 @@ small {
 
 a {
     @apply text-link-color;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Base underline effect */
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Default hover effects */
+a:hover {
+    transform: rotate(3deg);
+}
+
+a:hover::after {
+    height: 3px;
+}
+
+/* Rotation classes */
+a.rotate-1:hover {
+    transform: rotate(1deg);
+}
+
+a.rotate-3:hover {
+    transform: rotate(3deg);
+}
+
+a.rotate-4:hover {
+    transform: rotate(4deg);
+}
+
+a.rotate-5:hover {
+    transform: rotate(5deg);
+}
+
+/* Opt-out classes */
+a.no-underline::after {
+    display: none;
+}
+
+a.no-rotate:hover {
+    transform: none !important;
+}
+
+/* Override for specific cases where we don't want the effect */
+a.no-hover-effect {
+    transform: none !important;
+}
+
+a.no-hover-effect::after {
+    display: none;
+}
+
+a.no-hover-effect:hover {
+    transform: none !important;
 }
 
 h1,

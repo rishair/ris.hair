@@ -350,6 +350,8 @@
 	{/if}
 
 	<hr class="my-8" />
+
+	<hr class="my-8" />
 	<div class="flex justify-between">
 		{#if prevProject}
 			<a
