@@ -195,7 +195,7 @@
 
 	<div class="section-content">
 		<p class="mb-8">
-			Recent projects I've worked on. Personal favorites have a <HeartSticker
+			Since leaving Twitter, I've been exploring new ideas and projects. Personal favorites have a <HeartSticker
 				rotation={20}
 				position="inline"
 				size="small"
@@ -206,7 +206,7 @@
 			{#each data.projects as project, i}
 				<a href={'/projects/' + project.slug} class="group block project-card">
 					<div
-						class="shadow hover rounded-lg overflow-visible transition-all duration-200 bg-white/40 border-8 border-white/40 relative"
+						class="shadow rounded-lg overflow-visible transition-all duration-200 bg-white/40 border-8 border-white/40 relative"
 					>
 						{#if project.tags && project.tags.includes('favorite')}
 							<HeartSticker
@@ -488,5 +488,14 @@
 	/* Add smooth scrolling behavior */
 	:global(html) {
 		scroll-behavior: smooth;
+	}
+
+	/* Project card hover effect */
+	.project-card {
+		transition: transform 0.2s ease;
+	}
+
+	.project-card:hover > div {
+		transform: rotate(2deg);
 	}
 </style>
