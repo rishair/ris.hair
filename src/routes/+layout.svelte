@@ -25,34 +25,36 @@
 	/>
 </svelte:head>
 
-<nav class="p-6">
-	<ul class="flex gap-6">
-		{#each navItems as item}
-			<li>
-				<a href={item.href} class="hover:text-link-color transition-colors duration-200">
-					{item.label}
-				</a>
-			</li>
-		{/each}
-	</ul>
-</nav>
+<div class="min-h-screen flex flex-col">
+	<nav class="p-6">
+		<ul class="flex gap-6">
+			{#each navItems as item}
+				<li>
+					<a href={item.href} class="hover:text-link-color transition-colors duration-200">
+						{item.label}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</nav>
 
-<main class="container mx-auto max-w-3xl py-4 md:py-20">
-	<slot />
-</main>
+	<main class="container mx-auto max-w-3xl py-4 md:py-20 flex-1">
+		<slot />
+	</main>
 
-<div class="wave-top"></div>
+	<div class="wave-top"></div>
 
-<footer class="text-center text-base relative pb-8 pt-14">
-	<p class="mb-2">
-		Thanks for reading. Also, <a href={`mailto:hello@ris.hair`} class="text-orange-50 email-link"
-			>say hi!</a
-		>
-	</p>
-	<p class="text-white/50 text-sm">
-		© {new Date().getFullYear()} Rishi Ishairzay ✌️
-	</p>
-</footer>
+	<footer class="text-center text-base relative pb-8 pt-14">
+		<p class="mb-2">
+			Thanks for reading. Also, <a href={`mailto:hello@ris.hair`} class="text-orange-50 email-link"
+				>say hi!</a
+			>
+		</p>
+		<p class="text-white/50 text-sm">
+			© {new Date().getFullYear()} Rishi Ishairzay ✌️
+		</p>
+	</footer>
+</div>
 
 <style>
 	@import '../styles/app.css';
