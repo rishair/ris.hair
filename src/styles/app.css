@@ -42,7 +42,7 @@ body {
 
 .serif {
     @apply font-serif;
-    letter-spacing: 0.021em;
+    letter-spacing: 0.010em;
     line-height: 1.8;
 }
 
