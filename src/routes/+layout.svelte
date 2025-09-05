@@ -13,8 +13,9 @@
 <svelte:head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content={$page.data.description || "I'm an AI product engineer in Brooklyn, NY."} />
 	<meta property="og:title" content={$page.data.title || 'Rishi Ishairzay'} />
-	<meta property="og:description" content="I'm an AI product engineer in Brooklyn, NY." />
+	<meta property="og:description" content={$page.data.description || "I'm an AI product engineer in Brooklyn, NY."} />
 
 	<title>{$page.data.title || 'Rishi Ishairzay'}</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
