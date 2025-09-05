@@ -113,13 +113,11 @@
 		Hey there, I'm <em class="shadow px-2 py-1">Rishi Ishairzay</em>
 	</h1>
 	<h2>
-		I'm an independent <strong>AI product engineer</strong> in Brooklyn, NY.
+		I'm a <strong>creative AI product engineer</strong> in Brooklyn, NY.
 	</h2>
 
 	<p>
-		Nowadays I'm building a hyper-local event discovery platform at <a href="/projects/juice"
-			>Juice</a
-		>. See my previous exploits <a href="#side-quests">below</a>.
+		Nowadays, I'm building hyper-local products that connect you to your city (like <a href="/projects/juice">Juice</a> and <a href="https://hopscotchlabs.co/">Beebot</a>). 
 	</p>
 	<p>
 		In my <strong>personal life</strong>, I'm drawn to psychology, evolution, nature, cycling,
@@ -137,11 +135,10 @@
 	<p>
 		I build beautiful products that help people understand themselves, connect with others, explore
 		their curiosity, and have fun along the way. In other words, the products I wish existed.
-		Personal favorites are marked with a <HeartSticker
-			rotation={20}
-			position="inline"
-			size="small"
-		/>.
+	</p>
+	<p>
+		Below are some fruits from how I've spent my time. Personal favorites are marked with a
+		<HeartSticker rotation={20} position="inline" size="small" />.
 	</p>
 
 	<p>

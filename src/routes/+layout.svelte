@@ -45,9 +45,8 @@
 
 <footer class="text-center text-base relative pb-8 pt-14">
 	<p class="mb-2">
-		Thanks for reading. Seriously. Also, <a
-			href={`mailto:hello@ris.hair`}
-			class="text-orange-50 email-link">say hi!</a
+		Thanks for reading. Also, <a href={`mailto:hello@ris.hair`} class="text-orange-50 email-link"
+			>say hi!</a
 		>
 	</p>
 	<p class="text-white/50 text-sm">
