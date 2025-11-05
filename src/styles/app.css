@@ -43,7 +43,7 @@ body {
 .serif {
     @apply font-serif;
     letter-spacing: 0.010em;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 .name {
@@ -201,7 +201,7 @@ h2 {
 }
 
 p {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 button {
