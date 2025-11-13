@@ -11,6 +11,11 @@
 		return tags.filter((t) => t !== 'favorite');
 	}
 
+	function firstTag(tags: string[] = []) {
+		const filtered = withoutFavorite(tags);
+		return filtered[0] ?? tags[0];
+	}
+
 	export let data;
 
 	// Register ScrollTrigger plugin
@@ -264,14 +269,23 @@
 									borderWidth={3}
 								/>
 							{/if}
-							<div class="flex justify-between items-baseline">
-								<h3 class="text-xlg font-medium">{post.title}</h3>
-								<span class="text-sm text-gray-500">{formatDate(post.date)}</span>
+								<div class="flex justify-between items-start gap-4">
+									<div>
+										<h3 class="text-xlg font-medium">{post.title}</h3>
+										<span class="text-sm text-gray-500 block mt-0.5">{formatDate(post.date)}</span>
+									</div>
+									{#if firstTag(post.tags)}
+										<div class="flex-shrink-0">
+											<TagPill tag={firstTag(post.tags)} variant="green" />
+										</div>
+									{/if}
+								</div>
+								{#if post.description}
+									<p class="text-gray-600 text-base mt-1 mb-1">{post.description}</p>
+								{/if}
 							</div>
-							<p class="text-gray-600 text-base mt-1 mb-1">{post.description}</p>
-						</div>
-					</a>
-				</li>
+						</a>
+					</li>
 			{/each}
 		</ul>
 	</div>
