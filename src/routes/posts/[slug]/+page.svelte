@@ -12,6 +12,9 @@
 </svelte:head>
 
 <section class="text-default px-6">
+	<div class="mb-4">
+		<a href="/" class="text-sm text-gray-500 hover:text-gray-700">&larr; Back</a>
+	</div>
 	<DocumentHeader
 		title={post.title}
 		date={formatDate(post.date)}

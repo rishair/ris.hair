@@ -7,6 +7,8 @@
 	import { formatDate } from '$lib/utils';
 	import ScrollHint from '$lib/components/ScrollHint.svelte';
 
+	const WORDS_PER_MINUTE = 200;
+
 	function withoutFavorite(tags: string[] = []) {
 		return tags.filter((t) => t !== 'favorite');
 	}
@@ -16,7 +18,23 @@
 		return filtered[0] ?? tags[0];
 	}
 
+	function readingTime(body: string = '') {
+		const words = body.trim().split(/\s+/).filter(Boolean).length;
+		if (!words) {
+			return null;
+		}
+		const minutes = Math.max(1, Math.round(words / WORDS_PER_MINUTE));
+		return `${minutes} min read`;
+	}
+
 	export let data;
+
+	$: postsWithMeta = data.posts
+		?.map((post) => ({
+			...post,
+			readingTime: readingTime(post.body ?? '')
+		}))
+		?? [];
 
 	// Register ScrollTrigger plugin
 	gsap.registerPlugin(ScrollTrigger);
@@ -254,7 +272,7 @@
 
 	<div class="section-content">
 		<ul class="space-y-3">
-			{#each data.posts as post}
+			{#each postsWithMeta as post}
 				<li>
 					<a
 						href={'/posts/' + post.slug}
@@ -272,7 +290,13 @@
 								<div class="flex justify-between items-start gap-4">
 									<div>
 										<h3 class="text-xlg font-medium">{post.title}</h3>
-										<span class="text-sm text-gray-500 block mt-0.5">{formatDate(post.date)}</span>
+										<div class="flex items-center gap-2 text-sm text-gray-500 mt-0.5">
+											<span>{formatDate(post.date)}</span>
+											{#if post.readingTime}
+												<span aria-hidden="true">•</span>
+												<span>{post.readingTime}</span>
+											{/if}
+										</div>
 									</div>
 									{#if firstTag(post.tags)}
 										<div class="flex-shrink-0">
@@ -280,9 +304,6 @@
 										</div>
 									{/if}
 								</div>
-								{#if post.description}
-									<p class="text-gray-600 text-base mt-1 mb-1">{post.description}</p>
-								{/if}
 							</div>
 						</a>
 					</li>

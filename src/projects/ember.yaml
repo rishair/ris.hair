@@ -1,4 +1,4 @@
-title: Ember
+title: Ember v1
 description: Notes app that you can chat with. Dreams on your behalf while you sleep to make connections. Swipe for 5 minutes a day to complete a journal entry.
 image: /images/projects/ember/bg.png
 startDate: January 2025
@@ -9,15 +9,23 @@ tags:
   - note-taking
   - prototype
 atAGlance:
-  - Quickly take 1 sentence to 1 page long notes
-  - Chat with all of your notes
-  - Dreams on your behalf, making connections for you
+  - Quickly take notes of any size 
+  - Memory architecture to make surprising connections on your behalf
+  - Dreams on your behalf, asks you followups for quick journaling
+gallery:
+  - src: /images/projects/ember/dreams2.jpeg 
+    caption: |
+      Dream #1 - Swipe through these every day for quick journaling
+  - src: /images/projects/ember/dreams.jpeg
+    caption: |
+      Dream #2 - Multiple choice options when you're in a hurry
+  - src: /images/projects/ember/dreams3.jpeg
+    caption: | 
+      Dream #3 - Makes connections on your behalf
 fullDescription: |
   I'm a recovered note-taking nerd, hopping from Bear to Roam to Tana to Obsidian. What I've been searching for is a way to take my sporadic thoughts and make connections between them. It could be between sets at the gym, or wanting to voice my thoughts on a walk.
 
-  That's what led to Ember. It's an app that let's you take quick notes, let's you chat with them, and dreams on your behalf and presents you with connections between them.
+  That's what led to Ember. It's an app that let's you take quick notes, let's you chat with them, and dreams on your behalf. During those dreams, it surfaces questions to followup with you, so you can journal with only a few swipes.
 
-  The most fun part of working on this was architecting an AI-memory that's conducive to connecting thoughts.
+  The most exciting part of this project was architecting a memory system that's efficient, accurate, and able to connect seemingly amorphous thoughts together. 
 
-  ## Giving an AI Memory
-  Coming soon

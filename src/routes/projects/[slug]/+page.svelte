@@ -213,6 +213,9 @@
 </svelte:head>
 
 <section class="text-default px-6">
+	<div class="mb-4">
+		<a href="/" class="text-sm text-gray-500 hover:text-gray-700">&larr; Back</a>
+	</div>
 	<DocumentHeader
 		title={project.title}
 		date={formatDateRange(project.startDate, project.endDate)}
@@ -255,16 +258,16 @@
 			<h2 class="text-xl font-bold mb-4">Gallery</h2>
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 				{#each project.gallery as image, index}
-					<figure class="mb-4">
+					<figure class="mb-4 text-center">
 						<!-- Make images clickable to open the lightbox -->
 						<button
 							on:click={() => openLightbox(index)}
-							class="focus:outline-none bg-transparent border-none"
+							class="focus:outline-none bg-transparent border-none inline-block"
 						>
 							<img
 								src={image.src}
 								alt={image.caption}
-								class="w-full rounded-lg shadow transform hover:scale-105 transition-transform duration-200"
+								class="rounded-lg shadow transform hover:scale-105 transition-transform duration-200 max-h-[500px]"
 							/>
 						</button>
 						{#if image.caption}

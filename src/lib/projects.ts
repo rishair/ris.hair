@@ -12,7 +12,10 @@ export async function getAllProjects() {
 	for (const path in projectFiles) {
 		const content = projectFiles[path];
 		const project = load(content);
-		projects.push(project);
+		// Skip empty or invalid project files
+		if (project && typeof project === 'object' && project.slug && project.title) {
+			projects.push(project);
+		}
 	}
 
 	// Sort projects by date (most recent first)
