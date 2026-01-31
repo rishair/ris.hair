@@ -1,13 +1,16 @@
 import type { RequestHandler } from './$types';
 import { env as privateEnv } from '$env/dynamic/private';
 
-export const GET: RequestHandler = async ({ params, platform, request, fetch, getClientAddress }) => {
-	const imagePath = params.path;
+export const GET: RequestHandler = async ({ params, platform, request, fetch, getClientAddress, url }) => {
+	const path = params.path;
+	// Extract tag from tracker param: 't' -> null, 't-abc' -> 'abc'
+	const tag = params.tracker === 't' ? null : params.tracker.slice(2);
 
 	// Use Cloudflare env in production, fall back to SvelteKit env for local dev
-	const cfEnv = platform?.env as { RESEND_API_KEY?: string; NOTIFICATION_EMAIL?: string } | undefined;
+	const cfEnv = platform?.env as { RESEND_API_KEY?: string; NOTIFICATION_EMAIL?: string; NOTIFICATION_FROM?: string } | undefined;
 	const RESEND_API_KEY = cfEnv?.RESEND_API_KEY || privateEnv.RESEND_API_KEY;
 	const NOTIFICATION_EMAIL = cfEnv?.NOTIFICATION_EMAIL || privateEnv.NOTIFICATION_EMAIL;
+	const NOTIFICATION_FROM = cfEnv?.NOTIFICATION_FROM || privateEnv.NOTIFICATION_FROM || 'notifications@ris.hair';
 
 	// Send email notification
 	if (RESEND_API_KEY && NOTIFICATION_EMAIL) {
@@ -31,10 +34,12 @@ export const GET: RequestHandler = async ({ params, platform, request, fetch, ge
 		const city = cf?.city || 'Unknown';
 		const region = cf?.region || '';
 
-		// Get the base URL from the request
-		const url = new URL(request.url);
+		// Build URLs
 		const baseUrl = `${url.protocol}//${url.host}`;
-		const imageUrl = `${baseUrl}/${imagePath}`;
+		const resourceUrl = `${baseUrl}/${path}`;
+
+		// Build subject line
+		const subject = tag ? `[${tag}] Link opened: ${path}` : `Link opened: ${path}`;
 
 		// Fire and forget - don't block the redirect
 		fetch('https://api.resend.com/emails', {
@@ -44,19 +49,20 @@ export const GET: RequestHandler = async ({ params, platform, request, fetch, ge
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				from: 'onboarding@resend.dev',
+				from: NOTIFICATION_FROM,
 				to: NOTIFICATION_EMAIL,
-				subject: `Image viewed: ${imagePath}`,
+				subject,
 				html: `
-					<h2>Image Viewed</h2>
-					<p><strong>Image:</strong> <a href="${imageUrl}">/${imagePath}</a></p>
+					<h2>Link Opened</h2>
+					${tag ? `<p><strong>Tag:</strong> ${tag}</p>` : ''}
+					<p><strong>Path:</strong> <a href="${resourceUrl}">/${path}</a></p>
 					<p><strong>IP Address:</strong> ${ip}</p>
 					<p><strong>Location:</strong> ${city}${region ? ', ' + region : ''}, ${country}</p>
 					<p><strong>Referer:</strong> ${referer}</p>
 					<p><strong>User Agent:</strong> ${userAgent}</p>
 					<p><strong>Time:</strong> ${new Date().toISOString()}</p>
 					<br/>
-					<p><a href="${imageUrl}" style="display:inline-block;padding:10px 20px;background:#006b56;color:white;text-decoration:none;border-radius:4px;">View Image</a></p>
+					<p><a href="${resourceUrl}" style="display:inline-block;padding:10px 20px;background:#006b56;color:white;text-decoration:none;border-radius:4px;">View Resource</a></p>
 				`
 			})
 		}).catch(err => {
@@ -64,9 +70,9 @@ export const GET: RequestHandler = async ({ params, platform, request, fetch, ge
 		});
 	}
 
-	// Redirect to the actual static file
+	// Redirect to the actual resource
 	return new Response(null, {
 		status: 302,
-		headers: { Location: `/${imagePath}` }
+		headers: { Location: `/${path}` }
 	});
 };
