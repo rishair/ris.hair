@@ -14,6 +14,16 @@ export interface Post extends Document {
 
 export type Categories = 'sveltekit' | 'svelte';
 
+export interface LibraryItem {
+	title: string;
+	slug: string;
+	author: string;
+	description: string;
+	link: string;
+	image: string;
+	type: 'book' | 'article' | 'podcast';
+}
+
 export interface Project extends Document {
 	link?: string;
 	startDate: string;

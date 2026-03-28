@@ -312,6 +312,44 @@
 	</div>
 </section>
 
+<!-- Library Section -->
+<section id="library" class="text-default px-6 mb-32 pt-16">
+	<h2 class="section-title inline-block">
+		<em class="shadow px-2 py-1">Library</em>
+	</h2>
+
+	<div class="section-content">
+		<p class="mb-8">Books, articles, and podcasts that have shaped my thinking.</p>
+
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+			{#each data.libraryItems as item}
+				<a
+					href={item.link}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="no-underline group block library-card"
+				>
+					<div class="rounded-lg overflow-hidden transition-all duration-200 bg-white/40 border border-gray-200 hover:border-gray-300 hover:shadow-md relative">
+						<img
+							src={item.image}
+							alt={item.title}
+							class="w-full h-48 object-cover"
+						/>
+						<div class="p-4">
+							<div class="mb-1">
+								<TagPill tag={item.type} variant="green" />
+							</div>
+							<h3 class="text-base font-bold mb-1">{item.title}</h3>
+							<p class="text-sm text-gray-500 mb-2">{item.author}</p>
+							<p class="text-sm text-gray-600">{item.description}</p>
+						</div>
+					</div>
+				</a>
+			{/each}
+		</div>
+	</div>
+</section>
+
 <style>
 	h1 {
 		width: 100%;
@@ -408,5 +446,14 @@
 
 	#writings li a:hover::after {
 		transform: scaleY(1);
+	}
+
+	/* Library card hover effect */
+	.library-card {
+		transition: transform 0.2s ease;
+	}
+
+	.library-card:hover > div {
+		transform: rotate(1deg);
 	}
 </style>
