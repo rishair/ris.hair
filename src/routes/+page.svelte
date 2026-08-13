@@ -4,6 +4,7 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import TagPill from '$lib/components/TagPill.svelte';
 	import HeartSticker from '$lib/components/HeartSticker.svelte';
+	import type { LibraryItem } from '$lib/library';
 	import { formatDate } from '$lib/utils';
 	import ScrollHint from '$lib/components/ScrollHint.svelte';
 
@@ -25,6 +26,17 @@
 		}
 		const minutes = Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 		return `${minutes} min read`;
+	}
+
+	function typeLabel(type: LibraryItem['type']) {
+		const labels: Record<string, string> = {
+			article: 'Article',
+			book: 'Book',
+			essay: 'Essay',
+			podcast: 'Podcast',
+			video: 'Video'
+		};
+		return labels[type] ?? type;
 	}
 
 	export let data;
@@ -91,6 +103,26 @@
 					scrollTrigger: {
 						trigger: content as Element,
 						start: 'top 80%',
+						toggleActions: 'play none none none'
+					}
+				}
+			);
+		});
+
+		// Animate library cards with staggered effect
+		gsap.utils.toArray('.library-card').forEach((card, index) => {
+			gsap.fromTo(
+				card as Element,
+				{ opacity: 0, y: 30 },
+				{
+					opacity: 1,
+					y: 0,
+					duration: 0.6,
+					delay: 0.1 * index,
+					ease: 'power2.out',
+					scrollTrigger: {
+						trigger: card as Element,
+						start: 'top 85%',
 						toggleActions: 'play none none none'
 					}
 				}
@@ -312,6 +344,43 @@
 	</div>
 </section>
 
+<!-- Library Section -->
+<section id="library" class="text-default px-6 mb-32 pt-16">
+	<h2 class="section-title inline-block">
+		<em class="shadow px-2 py-1">Library</em>
+	</h2>
+
+	<div class="section-content">
+		<p class="mb-8">Content that has really landed with me — books, articles, essays, and other things that have shaped how I think.</p>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			{#each data.libraryItems as item}
+				<a
+					href={item.url}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="no-underline group block library-card"
+				>
+					<div
+						class="shadow rounded-lg overflow-hidden transition-all duration-200 bg-white/40 border-8 border-white/40 relative h-full flex flex-col"
+					>
+						<div class="p-5 flex flex-col flex-1">
+							<div class="flex items-start justify-between gap-3 mb-3">
+								<TagPill tag={typeLabel(item.type)} variant="green" />
+							</div>
+							<h3 class="text-lg font-bold mb-1 leading-snug">{item.title}</h3>
+							<p class="text-sm text-gray-500 mb-3">
+								{item.author}{#if item.publication}<span class="mx-1">·</span>{item.publication}{/if}
+							</p>
+							<p class="text-base text-gray-600 mb-0 mt-auto">{item.note}</p>
+						</div>
+					</div>
+				</a>
+			{/each}
+		</div>
+	</div>
+</section>
+
 <style>
 	h1 {
 		width: 100%;
@@ -407,6 +476,34 @@
 	}
 
 	#writings li a:hover::after {
+		transform: scaleY(1);
+	}
+
+	/* Library card hover effect */
+	.library-card {
+		transition: transform 0.2s ease;
+	}
+
+	.library-card:hover > div {
+		transform: rotate(1.5deg);
+	}
+
+	.library-card > div::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 3px;
+		background-color: #006b56;
+		border-bottom-left-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
+		transform: scaleY(0);
+		transform-origin: bottom;
+		transition: transform 0.2s ease;
+	}
+
+	.library-card:hover > div::after {
 		transform: scaleY(1);
 	}
 </style>

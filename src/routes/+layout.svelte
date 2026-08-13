@@ -7,7 +7,9 @@
 		label: string;
 	}
 
-	const navItems: NavItem[] = [];
+	const navItems: NavItem[] = [
+		{ href: '/library', label: 'Library' }
+	];
 </script>
 
 <svelte:head>
